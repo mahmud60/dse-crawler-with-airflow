@@ -1,28 +1,31 @@
 # Dhaka Stock Exchange Data Crawler
 
-This project automates the process of crawling stock market data from the Dhaka Stock Exchange (DSE) and stores it in a PostgreSQL database. Using **Apache Airflow** for orchestration and **Python** for data scraping, the pipeline ensures reliable and scheduled updates of stock data.
+This project automates the process of crawling stock market data from the Dhaka Stock Exchange (DSE) and stores it in a PostgreSQL database. The entire pipeline is orchestrated using **Apache Airflow** and is containerized with **Docker** for easy deployment and scalability.
 
 ## Features:
-- **Data Scraping**: Extracts real-time stock prices and other relevant financial data from the DSE website.
-- **Data Storage**: Saves the crawled data into a PostgreSQL database, making it easily accessible for further analysis.
-- **Apache Airflow**: Automates and schedules the data pipeline, ensuring the system runs at defined intervals or based on specific triggers.
-- **Modular Design**: Easily extendable to add more sources or process different kinds of stock data.
+- **Data Scraping**: Extracts real-time stock prices and financial data from the DSE website.
+- **Data Storage**: Stores the crawled data in a PostgreSQL database for easy querying and analysis.
+- **Apache Airflow**: Manages task scheduling and orchestration for automated and reliable data extraction.
+- **Docker**: Containerized setup ensures easy deployment and consistent environments across different platforms.
+- **Modular Design**: Easily extendable to add new data sources or customize the scraping and processing logic.
 
 ## Technologies:
-- **Apache Airflow**: For scheduling and workflow orchestration.
-- **Python**: Used for web scraping and data processing.
-- **PostgreSQL**: The database for storing and querying stock data.
-- **Docker** (optional): For containerized deployment and easy setup.
+- **Apache Airflow**: Workflow orchestration and scheduling.
+- **Python**: Web scraping and data processing.
+- **PostgreSQL**: Database for storing and managing stock data.
+- **Docker**: Containers for seamless deployment and environment consistency.
 
 ## How It Works:
-1. Apache Airflow triggers a scheduled task to scrape data from the Dhaka Stock Exchange website.
-2. The Python script fetches and processes the data.
-3. The processed data is stored in a PostgreSQL database for future use.
-4. Logs and error handling ensure smooth operation and reliability.
+1. **Docker** sets up the required environment for Airflow, Python, and PostgreSQL.
+2. **Apache Airflow** schedules and triggers tasks to scrape stock data from the DSE website.
+3. The **Python** script fetches, processes, and validates the data.
+4. The processed data is saved in the **PostgreSQL** database.
+5. Logs and monitoring provide insights into task execution and potential issues.
 
 ## Usage:
 1. Clone the repository.
-2. Configure PostgreSQL and Airflow settings.
-3. Run the project using Airflow to schedule regular stock data updates.
+2. Use Docker to build and start the containers (Airflow, PostgreSQL, etc.).
+3. Configure PostgreSQL and Airflow settings.
+4. Run the Airflow scheduler to automate stock data scraping at regular intervals.
 
-This project provides a scalable solution for tracking Dhaka Stock Exchange data efficiently.
+This project provides a reliable and scalable solution for scraping and storing Dhaka Stock Exchange data using Docker for containerization.
