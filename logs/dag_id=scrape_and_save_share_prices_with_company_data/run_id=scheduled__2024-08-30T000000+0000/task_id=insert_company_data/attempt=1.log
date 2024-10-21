@@ -1,0 +1,112 @@
+[2024-09-27T23:46:44.900+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-27T23:46:45.029+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: scrape_and_save_share_prices_with_company_data.insert_company_data scheduled__2024-08-30T00:00:00+00:00 [queued]>
+[2024-09-27T23:46:45.131+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: scrape_and_save_share_prices_with_company_data.insert_company_data scheduled__2024-08-30T00:00:00+00:00 [queued]>
+[2024-09-27T23:46:45.133+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-09-27T23:46:45.340+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): insert_company_data> on 2024-08-30 00:00:00+00:00
+[2024-09-27T23:46:45.381+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6398) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-27T23:46:45.412+0000] {standard_task_runner.py:72} INFO - Started process 6436 to run task
+[2024-09-27T23:46:45.442+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'scrape_and_save_share_prices_with_company_data', 'insert_company_data', 'scheduled__2024-08-30T00:00:00+00:00', '--job-id', '3980', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpw9yoqpr0']
+[2024-09-27T23:46:45.462+0000] {standard_task_runner.py:105} INFO - Job 3980: Subtask insert_company_data
+[2024-09-27T23:46:46.127+0000] {task_command.py:467} INFO - Running <TaskInstance: scrape_and_save_share_prices_with_company_data.insert_company_data scheduled__2024-08-30T00:00:00+00:00 [running]> on host 7746de5121f6
+[2024-09-27T23:46:46.962+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='scrape_and_save_share_prices_with_company_data' AIRFLOW_CTX_TASK_ID='insert_company_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-30T00:00:00+00:00'
+[2024-09-27T23:46:46.975+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-09-27T23:46:46.989+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-09-27T23:46:46.990+0000] {logging_mixin.py:190} INFO - Current task name:insert_company_data state:running start_date:2024-09-27 23:46:45.037497+00:00
+[2024-09-27T23:46:46.991+0000] {logging_mixin.py:190} INFO - Dag name:scrape_and_save_share_prices_with_company_data and current dag run status:running
+[2024-09-27T23:46:46.993+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-27T23:46:58.125+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.173+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('1JANATAMF', 'https://www.dse.com.bd/displayCompany.php?name=1JANATAMF')
+[2024-09-27T23:46:58.192+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:46:58.261+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.302+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('1STPRIMFMF', 'https://www.dse.com.bd/displayCompany.php?name=1STPRIMFMF')
+[2024-09-27T23:46:58.309+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:46:58.365+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.380+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AAMRANET', 'https://www.dse.com.bd/displayCompany.php?name=AAMRANET')
+[2024-09-27T23:46:58.387+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:46:58.432+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.471+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AAMRATECH', 'https://www.dse.com.bd/displayCompany.php?name=AAMRATECH')
+[2024-09-27T23:46:58.490+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:46:58.564+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.627+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ABB1STMF', 'https://www.dse.com.bd/displayCompany.php?name=ABB1STMF')
+[2024-09-27T23:46:58.646+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:46:58.764+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.799+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ABBANK', 'https://www.dse.com.bd/displayCompany.php?name=ABBANK')
+[2024-09-27T23:46:58.829+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:46:58.890+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.928+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ACFL', 'https://www.dse.com.bd/displayCompany.php?name=ACFL')
+[2024-09-27T23:46:58.934+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:46:59.023+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:59.077+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ACI', 'https://www.dse.com.bd/displayCompany.php?name=ACI')
+[2024-09-27T23:46:59.092+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:46:59.211+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:59.241+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ACIFORMULA', 'https://www.dse.com.bd/displayCompany.php?name=ACIFORMULA')
+[2024-09-27T23:46:59.253+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:46:59.314+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:59.333+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ACMELAB', 'https://www.dse.com.bd/displayCompany.php?name=ACMELAB')
+[2024-09-27T23:46:59.352+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:46:59.452+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:59.473+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ACMEPL', 'https://www.dse.com.bd/displayCompany.php?name=ACMEPL')
+[2024-09-27T23:46:59.476+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:46:59.504+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:59.547+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ACTIVEFINE', 'https://www.dse.com.bd/displayCompany.php?name=ACTIVEFINE')
+[2024-09-27T23:46:59.561+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:46:59.686+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:59.786+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ADNTEL', 'https://www.dse.com.bd/displayCompany.php?name=ADNTEL')
+[2024-09-27T23:46:59.822+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:47:00.583+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:47:10.791+0000] {local_task_job_runner.py:266} INFO - Task exited with return code -9For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed
+[2024-09-27T23:47:11.328+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

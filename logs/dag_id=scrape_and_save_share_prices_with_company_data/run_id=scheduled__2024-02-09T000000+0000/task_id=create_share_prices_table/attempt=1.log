@@ -1,0 +1,97 @@
+[2024-09-27T18:40:23.015+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-27T18:40:23.049+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: scrape_and_save_share_prices_with_company_data.create_share_prices_table scheduled__2024-02-09T00:00:00+00:00 [queued]>
+[2024-09-27T18:40:23.069+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: scrape_and_save_share_prices_with_company_data.create_share_prices_table scheduled__2024-02-09T00:00:00+00:00 [queued]>
+[2024-09-27T18:40:23.070+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-09-27T18:40:23.102+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): create_share_prices_table> on 2024-02-09 00:00:00+00:00
+[2024-09-27T18:40:23.117+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=14253) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-27T18:40:23.120+0000] {standard_task_runner.py:72} INFO - Started process 14261 to run task
+[2024-09-27T18:40:23.122+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'scrape_and_save_share_prices_with_company_data', 'create_share_prices_table', 'scheduled__2024-02-09T00:00:00+00:00', '--job-id', '1644', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp0sleenqm']
+[2024-09-27T18:40:23.125+0000] {standard_task_runner.py:105} INFO - Job 1644: Subtask create_share_prices_table
+[2024-09-27T18:40:23.250+0000] {task_command.py:467} INFO - Running <TaskInstance: scrape_and_save_share_prices_with_company_data.create_share_prices_table scheduled__2024-02-09T00:00:00+00:00 [running]> on host 13b5797a93ab
+[2024-09-27T18:40:23.499+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='scrape_and_save_share_prices_with_company_data' AIRFLOW_CTX_TASK_ID='create_share_prices_table' AIRFLOW_CTX_EXECUTION_DATE='2024-02-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-09T00:00:00+00:00'
+[2024-09-27T18:40:23.502+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-09-27T18:40:23.503+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-09-27T18:40:23.504+0000] {logging_mixin.py:190} INFO - Current task name:create_share_prices_table state:running start_date:2024-09-27 18:40:23.050700+00:00
+[2024-09-27T18:40:23.508+0000] {logging_mixin.py:190} INFO - Dag name:scrape_and_save_share_prices_with_company_data and current dag run status:running
+[2024-09-27T18:40:23.510+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-27T18:40:23.529+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T18:40:23.538+0000] {sql.py:509} INFO - Running statement: 
+        CREATE TABLE IF NOT EXISTS company_share_prices (
+            id SERIAL,
+            company_id INTEGER NOT NULL,
+            date DATE,
+            latest_trading_price VARCHAR(50),
+            low_price VARCHAR(50),
+            high_price VARCHAR(50),
+            closing_price VARCHAR(50),
+            ycp VARCHAR(50),
+            change VARCHAR(10),
+            trade VARCHAR(50),
+            value VARCHAR(50),
+            volume VARCHAR(50),
+            PRIMARY KEY(company_id, id),
+            FOREIGN KEY(company_id)
+                REFERENCES company_list(company_id)
+                ON UPDATE CASCADE ON DELETE CASCADE
+        );
+    , parameters: None
+[2024-09-27T18:40:23.541+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-27T18:40:23.566+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-27T18:40:23.567+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=scrape_and_save_share_prices_with_company_data, task_id=create_share_prices_table, run_id=scheduled__2024-02-09T00:00:00+00:00, execution_date=20240209T000000, start_date=20240927T184023, end_date=20240927T184023
+[2024-09-27T18:40:23.591+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-09-27T18:40:23.592+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-09-27T18:40:23.593+0000] {logging_mixin.py:190} INFO - Dag name:scrape_and_save_share_prices_with_company_data queued_at:2024-09-27 18:39:44.977118+00:00
+[2024-09-27T18:40:23.594+0000] {logging_mixin.py:190} INFO - Task hostname:13b5797a93ab operator:PythonOperator
+[2024-09-27T18:40:23.643+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-27T18:40:23.743+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-27T18:40:23.772+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-09-27T23:04:29.162+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-27T23:04:29.258+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: scrape_and_save_share_prices_with_company_data.create_share_prices_table scheduled__2024-02-09T00:00:00+00:00 [queued]>
+[2024-09-27T23:04:29.288+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: scrape_and_save_share_prices_with_company_data.create_share_prices_table scheduled__2024-02-09T00:00:00+00:00 [queued]>
+[2024-09-27T23:04:29.290+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-09-27T23:04:29.351+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): create_share_prices_table> on 2024-02-09 00:00:00+00:00
+[2024-09-27T23:04:29.374+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2666) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-27T23:04:29.388+0000] {standard_task_runner.py:72} INFO - Started process 2690 to run task
+[2024-09-27T23:04:29.385+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'scrape_and_save_share_prices_with_company_data', 'create_share_prices_table', 'scheduled__2024-02-09T00:00:00+00:00', '--job-id', '3150', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp06z1wmyy']
+[2024-09-27T23:04:29.391+0000] {standard_task_runner.py:105} INFO - Job 3150: Subtask create_share_prices_table
+[2024-09-27T23:04:29.636+0000] {task_command.py:467} INFO - Running <TaskInstance: scrape_and_save_share_prices_with_company_data.create_share_prices_table scheduled__2024-02-09T00:00:00+00:00 [running]> on host 7746de5121f6
+[2024-09-27T23:04:30.190+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='scrape_and_save_share_prices_with_company_data' AIRFLOW_CTX_TASK_ID='create_share_prices_table' AIRFLOW_CTX_EXECUTION_DATE='2024-02-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-09T00:00:00+00:00'
+[2024-09-27T23:04:30.192+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-09-27T23:04:30.199+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-09-27T23:04:30.200+0000] {logging_mixin.py:190} INFO - Current task name:create_share_prices_table state:running start_date:2024-09-27 23:04:29.260859+00:00
+[2024-09-27T23:04:30.201+0000] {logging_mixin.py:190} INFO - Dag name:scrape_and_save_share_prices_with_company_data and current dag run status:running
+[2024-09-27T23:04:30.202+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-27T23:04:30.259+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:04:30.291+0000] {sql.py:509} INFO - Running statement: 
+        CREATE TABLE IF NOT EXISTS company_share_prices (
+            id SERIAL,
+            company_id INTEGER NOT NULL,
+            date DATE,
+            latest_trading_price VARCHAR(50),
+            low_price VARCHAR(50),
+            high_price VARCHAR(50),
+            closing_price VARCHAR(50),
+            ycp VARCHAR(50),
+            change VARCHAR(10),
+            trade VARCHAR(50),
+            value VARCHAR(50),
+            volume VARCHAR(50),
+            PRIMARY KEY(company_id, id),
+            FOREIGN KEY(company_id)
+                REFERENCES company_list(company_id)
+                ON UPDATE CASCADE ON DELETE CASCADE
+        );
+    , parameters: None
+[2024-09-27T23:04:30.310+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-27T23:04:30.384+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-27T23:04:30.410+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=scrape_and_save_share_prices_with_company_data, task_id=create_share_prices_table, run_id=scheduled__2024-02-09T00:00:00+00:00, execution_date=20240209T000000, start_date=20240927T230429, end_date=20240927T230430
+[2024-09-27T23:04:30.510+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-09-27T23:04:30.511+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-09-27T23:04:30.519+0000] {logging_mixin.py:190} INFO - Dag name:scrape_and_save_share_prices_with_company_data queued_at:2024-09-27 23:03:27.451556+00:00
+[2024-09-27T23:04:30.520+0000] {logging_mixin.py:190} INFO - Task hostname:7746de5121f6 operator:PythonOperator
+[2024-09-27T23:04:30.680+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-27T23:04:30.709+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

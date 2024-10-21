@@ -1,0 +1,60 @@
+[2024-10-10T17:40:57.029+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-10T17:40:57.609+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: scrape_and_save_share_prices_with_company_data.extract_and_save_company_market_info scheduled__2024-10-02T00:00:00+00:00 [queued]>
+[2024-10-10T17:40:57.696+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: scrape_and_save_share_prices_with_company_data.extract_and_save_company_market_info scheduled__2024-10-02T00:00:00+00:00 [queued]>
+[2024-10-10T17:40:57.697+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-10-10T17:40:57.940+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): extract_and_save_company_market_info> on 2024-10-02 00:00:00+00:00
+[2024-10-10T17:40:58.054+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1413) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-10T17:40:58.090+0000] {standard_task_runner.py:72} INFO - Started process 1475 to run task
+[2024-10-10T17:40:58.283+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'scrape_and_save_share_prices_with_company_data', 'extract_and_save_company_market_info', 'scheduled__2024-10-02T00:00:00+00:00', '--job-id', '4311', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpsaidw7rp']
+[2024-10-10T17:40:58.329+0000] {standard_task_runner.py:105} INFO - Job 4311: Subtask extract_and_save_company_market_info
+[2024-10-10T17:40:59.578+0000] {task_command.py:467} INFO - Running <TaskInstance: scrape_and_save_share_prices_with_company_data.extract_and_save_company_market_info scheduled__2024-10-02T00:00:00+00:00 [running]> on host 7746de5121f6
+[2024-10-10T17:41:01.563+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='scrape_and_save_share_prices_with_company_data' AIRFLOW_CTX_TASK_ID='extract_and_save_company_market_info' AIRFLOW_CTX_EXECUTION_DATE='2024-10-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-02T00:00:00+00:00'
+[2024-10-10T17:41:01.569+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-10T17:41:01.598+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-10T17:41:01.603+0000] {logging_mixin.py:190} INFO - Current task name:extract_and_save_company_market_info state:running start_date:2024-10-10 17:40:57.610925+00:00
+[2024-10-10T17:41:01.669+0000] {logging_mixin.py:190} INFO - Dag name:scrape_and_save_share_prices_with_company_data and current dag run status:running
+[2024-10-10T17:41:01.699+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-10T17:41:01.965+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-10-10T17:41:14.076+0000] {logging_mixin.py:190} INFO - [Ellipsis, '3.30', '3.30']
+[2024-10-10T17:41:14.239+0000] {logging_mixin.py:190} INFO - [Ellipsis, '3.30', '3.30', '3:10 PM', '3.10 - 3.30']
+[2024-10-10T17:41:14.255+0000] {logging_mixin.py:190} INFO - [Ellipsis, '3.30', '3.30', '3:10 PM', '3.10 - 3.30', '0.1', '0.38']
+[2024-10-10T17:41:14.274+0000] {logging_mixin.py:190} INFO - [Ellipsis, '3.30', '3.30', '3:10 PM', '3.10 - 3.30', '0.1', '0.38', '3.12%', '3.10 - 6.10']
+[2024-10-10T17:41:14.338+0000] {logging_mixin.py:190} INFO - [Ellipsis, '3.30', '3.30', '3:10 PM', '3.10 - 3.30', '0.1', '0.38', '3.12%', '3.10 - 6.10', '3.10', '116,365.00']
+[2024-10-10T17:41:14.349+0000] {logging_mixin.py:190} INFO - [Ellipsis, '3.30', '3.30', '3:10 PM', '3.10 - 3.30', '0.1', '0.38', '3.12%', '3.10 - 6.10', '3.10', '116,365.00', '3.20', '56']
+[2024-10-10T17:41:14.379+0000] {logging_mixin.py:190} INFO - [Ellipsis, '3.30', '3.30', '3:10 PM', '3.10 - 3.30', '0.1', '0.38', '3.12%', '3.10 - 6.10', '3.10', '116,365.00', '3.20', '56', '3.20', '927.755']
+[2024-10-10T17:41:14.554+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-10-10T17:41:14.618+0000] {sql.py:509} INFO - Running statement: 
+            INSERT INTO company_market_info (date, last_trading_price, closing_price, last_update, day_range, change,
+                                             change_percentage, day_value, weeks_moving_range, opening_price, day_volume,
+                                             adjusted_opening_price, day_trade, yesterday_closing_price, market_capitalization, company_id) 
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+        , parameters: (datetime.datetime(2024, 10, 10, 17, 41, 14, 380655), '3.30', '3.30', '3:10 PM', '3.10 - 3.30', '0.1', '0.38', '3.12%', '3.10 - 6.10', '3.10', '116,365.00', '3.20', '56', '3.20', '927.755', 1)
+[2024-10-10T17:41:14.851+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-10T17:41:21.865+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.90', '33.90']
+[2024-10-10T17:41:21.880+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.90', '33.90', '3:10 PM', '31.90 - 34.20']
+[2024-10-10T17:41:21.908+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.90', '33.90', '3:10 PM', '31.90 - 34.20', '1.8', '15.82']
+[2024-10-10T17:41:21.909+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.90', '33.90', '3:10 PM', '31.90 - 34.20', '1.8', '15.82', '5.61%', '14.00 - 51.40']
+[2024-10-10T17:41:21.910+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.90', '33.90', '3:10 PM', '31.90 - 34.20', '1.8', '15.82', '5.61%', '14.00 - 51.40', '32.10', '471,591.00']
+[2024-10-10T17:41:21.914+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.90', '33.90', '3:10 PM', '31.90 - 34.20', '1.8', '15.82', '5.61%', '14.00 - 51.40', '32.10', '471,591.00', '32.10', '400']
+[2024-10-10T17:41:21.916+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.90', '33.90', '3:10 PM', '31.90 - 34.20', '1.8', '15.82', '5.61%', '14.00 - 51.40', '32.10', '471,591.00', '32.10', '400', '32.10', '642.000']
+[2024-10-10T17:41:22.019+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-10-10T17:41:22.132+0000] {sql.py:509} INFO - Running statement: 
+            INSERT INTO company_market_info (date, last_trading_price, closing_price, last_update, day_range, change,
+                                             change_percentage, day_value, weeks_moving_range, opening_price, day_volume,
+                                             adjusted_opening_price, day_trade, yesterday_closing_price, market_capitalization, company_id) 
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+        , parameters: (datetime.datetime(2024, 10, 10, 17, 41, 21, 917471), '33.90', '33.90', '3:10 PM', '31.90 - 34.20', '1.8', '15.82', '5.61%', '14.00 - 51.40', '32.10', '471,591.00', '32.10', '400', '32.10', '642.000', 2)
+[2024-10-10T17:41:22.155+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-10-10T17:41:44.287+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.00', '33.00']
+[2024-10-10T17:41:44.339+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.00', '33.00', '3:10 PM', '31.10 - 33.10']
+[2024-10-10T17:41:44.346+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.00', '33.00', '3:10 PM', '31.10 - 33.10', '1.9', '24.39']
+[2024-10-10T17:41:44.366+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.00', '33.00', '3:10 PM', '31.10 - 33.10', '1.9', '24.39', '6.11%', '29.00 - 59.30']
+[2024-10-10T17:41:44.368+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.00', '33.00', '3:10 PM', '31.10 - 33.10', '1.9', '24.39', '6.11%', '29.00 - 59.30', '31.40', '749,301.00']
+[2024-10-10T17:41:44.370+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.00', '33.00', '3:10 PM', '31.10 - 33.10', '1.9', '24.39', '6.11%', '29.00 - 59.30', '31.40', '749,301.00', '31.10', '1,233']
+[2024-10-10T17:41:44.372+0000] {logging_mixin.py:190} INFO - [Ellipsis, '33.00', '33.00', '3:10 PM', '31.10 - 33.10', '1.9', '24.39', '6.11%', '29.00 - 59.30', '31.40', '749,301.00', '31.10', '1,233', '31.10', '2,891.675']
+[2024-10-10T17:41:52.821+0000] {job.py:229} INFO - Heartbeat recovered after 27.97 seconds
+[2024-10-10T17:41:53.098+0000] {local_task_job_runner.py:266} INFO - Task exited with return code -9For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed
+[2024-10-10T17:41:53.308+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-10T17:41:53.325+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

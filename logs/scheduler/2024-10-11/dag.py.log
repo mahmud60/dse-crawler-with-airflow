@@ -1,0 +1,14 @@
+[2024-10-11T21:48:05.783+0000] {processor.py:186} INFO - Started process (PID=38) to work on /opt/airflow/dags/dag.py
+[2024-10-11T21:48:05.785+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-11T21:48:05.801+0000] {logging_mixin.py:190} INFO - [2024-10-11T21:48:05.789+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-11T21:48:06.508+0000] {processor.py:925} INFO - DAG(s) 'scrape_and_save_share_prices_with_company_data' retrieved from /opt/airflow/dags/dag.py
+[2024-10-11T21:48:06.574+0000] {logging_mixin.py:190} INFO - [2024-10-11T21:48:06.573+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-11T21:48:06.628+0000] {logging_mixin.py:190} INFO - [2024-10-11T21:48:06.628+0000] {dag.py:4180} INFO - Setting next_dagrun for scrape_and_save_share_prices_with_company_data to 2024-10-11 00:00:00+00:00, run_after=2024-10-12 00:00:00+00:00
+[2024-10-11T21:48:06.688+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.927 seconds
+[2024-10-11T21:48:36.875+0000] {processor.py:186} INFO - Started process (PID=106) to work on /opt/airflow/dags/dag.py
+[2024-10-11T21:48:36.876+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2024-10-11T21:48:36.881+0000] {logging_mixin.py:190} INFO - [2024-10-11T21:48:36.880+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2024-10-11T21:48:37.124+0000] {processor.py:925} INFO - DAG(s) 'scrape_and_save_share_prices_with_company_data' retrieved from /opt/airflow/dags/dag.py
+[2024-10-11T21:48:37.166+0000] {logging_mixin.py:190} INFO - [2024-10-11T21:48:37.166+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-11T21:48:37.209+0000] {logging_mixin.py:190} INFO - [2024-10-11T21:48:37.209+0000] {dag.py:4180} INFO - Setting next_dagrun for scrape_and_save_share_prices_with_company_data to 2024-10-11 00:00:00+00:00, run_after=2024-10-12 00:00:00+00:00
+[2024-10-11T21:48:37.265+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag.py took 0.400 seconds

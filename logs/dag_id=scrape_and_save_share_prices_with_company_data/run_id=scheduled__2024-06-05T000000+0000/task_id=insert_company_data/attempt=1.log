@@ -1,0 +1,2808 @@
+[2024-09-27T23:27:42.855+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-27T23:27:42.916+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: scrape_and_save_share_prices_with_company_data.insert_company_data scheduled__2024-06-05T00:00:00+00:00 [queued]>
+[2024-09-27T23:27:42.981+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: scrape_and_save_share_prices_with_company_data.insert_company_data scheduled__2024-06-05T00:00:00+00:00 [queued]>
+[2024-09-27T23:27:42.983+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-09-27T23:27:43.048+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): insert_company_data> on 2024-06-05 00:00:00+00:00
+[2024-09-27T23:27:43.072+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=4770) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-27T23:27:43.076+0000] {standard_task_runner.py:72} INFO - Started process 4788 to run task
+[2024-09-27T23:27:43.086+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'scrape_and_save_share_prices_with_company_data', 'insert_company_data', 'scheduled__2024-06-05T00:00:00+00:00', '--job-id', '3618', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp8ds4ydj8']
+[2024-09-27T23:27:43.089+0000] {standard_task_runner.py:105} INFO - Job 3618: Subtask insert_company_data
+[2024-09-27T23:27:43.415+0000] {task_command.py:467} INFO - Running <TaskInstance: scrape_and_save_share_prices_with_company_data.insert_company_data scheduled__2024-06-05T00:00:00+00:00 [running]> on host 7746de5121f6
+[2024-09-27T23:27:44.079+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='scrape_and_save_share_prices_with_company_data' AIRFLOW_CTX_TASK_ID='insert_company_data' AIRFLOW_CTX_EXECUTION_DATE='2024-06-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-05T00:00:00+00:00'
+[2024-09-27T23:27:44.091+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-09-27T23:27:44.097+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-09-27T23:27:44.114+0000] {logging_mixin.py:190} INFO - Current task name:insert_company_data state:running start_date:2024-09-27 23:27:42.918786+00:00
+[2024-09-27T23:27:44.121+0000] {logging_mixin.py:190} INFO - Dag name:scrape_and_save_share_prices_with_company_data and current dag run status:running
+[2024-09-27T23:27:44.147+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-27T23:27:53.920+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:53.992+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('1JANATAMF', 'https://www.dse.com.bd/displayCompany.php?name=1JANATAMF')
+[2024-09-27T23:27:54.001+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:54.052+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:54.094+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('1STPRIMFMF', 'https://www.dse.com.bd/displayCompany.php?name=1STPRIMFMF')
+[2024-09-27T23:27:54.114+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:54.205+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:54.223+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AAMRANET', 'https://www.dse.com.bd/displayCompany.php?name=AAMRANET')
+[2024-09-27T23:27:54.235+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:54.277+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:54.301+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AAMRATECH', 'https://www.dse.com.bd/displayCompany.php?name=AAMRATECH')
+[2024-09-27T23:27:54.312+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:54.353+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:54.382+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ABB1STMF', 'https://www.dse.com.bd/displayCompany.php?name=ABB1STMF')
+[2024-09-27T23:27:54.391+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:54.429+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:54.449+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ABBANK', 'https://www.dse.com.bd/displayCompany.php?name=ABBANK')
+[2024-09-27T23:27:54.456+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:54.600+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:54.625+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ACFL', 'https://www.dse.com.bd/displayCompany.php?name=ACFL')
+[2024-09-27T23:27:54.641+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:54.759+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:54.794+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ACI', 'https://www.dse.com.bd/displayCompany.php?name=ACI')
+[2024-09-27T23:27:54.806+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:54.894+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:54.985+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ACIFORMULA', 'https://www.dse.com.bd/displayCompany.php?name=ACIFORMULA')
+[2024-09-27T23:27:55.009+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:55.099+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:55.160+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ACMELAB', 'https://www.dse.com.bd/displayCompany.php?name=ACMELAB')
+[2024-09-27T23:27:55.173+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:55.210+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:55.275+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ACMEPL', 'https://www.dse.com.bd/displayCompany.php?name=ACMEPL')
+[2024-09-27T23:27:55.278+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:55.352+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:55.360+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ACTIVEFINE', 'https://www.dse.com.bd/displayCompany.php?name=ACTIVEFINE')
+[2024-09-27T23:27:55.376+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:55.403+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:55.441+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ADNTEL', 'https://www.dse.com.bd/displayCompany.php?name=ADNTEL')
+[2024-09-27T23:27:55.459+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:55.525+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:55.574+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ADVENT', 'https://www.dse.com.bd/displayCompany.php?name=ADVENT')
+[2024-09-27T23:27:55.675+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:55.795+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:55.807+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AFCAGRO', 'https://www.dse.com.bd/displayCompany.php?name=AFCAGRO')
+[2024-09-27T23:27:55.826+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:55.871+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:55.903+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AFTABAUTO', 'https://www.dse.com.bd/displayCompany.php?name=AFTABAUTO')
+[2024-09-27T23:27:55.920+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:56.019+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:56.049+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AGNISYSL', 'https://www.dse.com.bd/displayCompany.php?name=AGNISYSL')
+[2024-09-27T23:27:56.069+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:56.153+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:56.175+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AGRANINS', 'https://www.dse.com.bd/displayCompany.php?name=AGRANINS')
+[2024-09-27T23:27:56.193+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:56.235+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:56.287+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AIBL1STIMF', 'https://www.dse.com.bd/displayCompany.php?name=AIBL1STIMF')
+[2024-09-27T23:27:56.297+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:56.326+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:56.358+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AIL', 'https://www.dse.com.bd/displayCompany.php?name=AIL')
+[2024-09-27T23:27:56.369+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:56.419+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:56.452+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AL-HAJTEX', 'https://www.dse.com.bd/displayCompany.php?name=AL-HAJTEX')
+[2024-09-27T23:27:56.476+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:56.520+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:56.573+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ALARABANK', 'https://www.dse.com.bd/displayCompany.php?name=ALARABANK')
+[2024-09-27T23:27:56.619+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:56.734+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:56.794+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ALIF', 'https://www.dse.com.bd/displayCompany.php?name=ALIF')
+[2024-09-27T23:27:56.813+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:56.896+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:56.913+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ALLTEX', 'https://www.dse.com.bd/displayCompany.php?name=ALLTEX')
+[2024-09-27T23:27:56.925+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:57.009+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:57.038+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AMANFEED', 'https://www.dse.com.bd/displayCompany.php?name=AMANFEED')
+[2024-09-27T23:27:57.047+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:57.092+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:57.177+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AMBEEPHA', 'https://www.dse.com.bd/displayCompany.php?name=AMBEEPHA')
+[2024-09-27T23:27:57.199+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:57.251+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:57.327+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AMCL(PRAN)', 'https://www.dse.com.bd/displayCompany.php?name=AMCL(PRAN)')
+[2024-09-27T23:27:57.344+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:57.386+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:57.417+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ANLIMAYARN', 'https://www.dse.com.bd/displayCompany.php?name=ANLIMAYARN')
+[2024-09-27T23:27:57.435+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:57.563+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:57.632+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ANWARGALV', 'https://www.dse.com.bd/displayCompany.php?name=ANWARGALV')
+[2024-09-27T23:27:57.666+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:57.742+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:57.782+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AOL', 'https://www.dse.com.bd/displayCompany.php?name=AOL')
+[2024-09-27T23:27:57.789+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:57.859+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:57.870+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('APEXFOODS', 'https://www.dse.com.bd/displayCompany.php?name=APEXFOODS')
+[2024-09-27T23:27:57.873+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:57.923+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:57.944+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('APEXFOOT', 'https://www.dse.com.bd/displayCompany.php?name=APEXFOOT')
+[2024-09-27T23:27:57.953+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:58.011+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:58.049+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('APEXSPINN', 'https://www.dse.com.bd/displayCompany.php?name=APEXSPINN')
+[2024-09-27T23:27:58.072+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:58.118+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:58.157+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('APEXTANRY', 'https://www.dse.com.bd/displayCompany.php?name=APEXTANRY')
+[2024-09-27T23:27:58.179+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:58.241+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:58.288+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('APOLOISPAT', 'https://www.dse.com.bd/displayCompany.php?name=APOLOISPAT')
+[2024-09-27T23:27:58.299+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:58.383+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:58.415+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ARAMIT', 'https://www.dse.com.bd/displayCompany.php?name=ARAMIT')
+[2024-09-27T23:27:58.434+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:58.510+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:58.563+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ARAMITCEM', 'https://www.dse.com.bd/displayCompany.php?name=ARAMITCEM')
+[2024-09-27T23:27:58.583+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:58.748+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:58.808+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ARGONDENIM', 'https://www.dse.com.bd/displayCompany.php?name=ARGONDENIM')
+[2024-09-27T23:27:58.828+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:58.904+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:58.952+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ASIAINS', 'https://www.dse.com.bd/displayCompany.php?name=ASIAINS')
+[2024-09-27T23:27:58.972+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:59.057+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:59.126+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ASIAPACINS', 'https://www.dse.com.bd/displayCompany.php?name=ASIAPACINS')
+[2024-09-27T23:27:59.152+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:59.232+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:59.255+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ASIATICLAB', 'https://www.dse.com.bd/displayCompany.php?name=ASIATICLAB')
+[2024-09-27T23:27:59.266+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:59.313+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:59.325+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ATCSLGF', 'https://www.dse.com.bd/displayCompany.php?name=ATCSLGF')
+[2024-09-27T23:27:59.333+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:59.494+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:59.541+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ATLASBANG', 'https://www.dse.com.bd/displayCompany.php?name=ATLASBANG')
+[2024-09-27T23:27:59.569+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:59.610+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:59.636+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('AZIZPIPES', 'https://www.dse.com.bd/displayCompany.php?name=AZIZPIPES')
+[2024-09-27T23:27:59.661+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:59.736+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:59.773+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BANGAS', 'https://www.dse.com.bd/displayCompany.php?name=BANGAS')
+[2024-09-27T23:27:59.788+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:59.863+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:59.886+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BANKASIA', 'https://www.dse.com.bd/displayCompany.php?name=BANKASIA')
+[2024-09-27T23:27:59.895+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:27:59.938+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:27:59.958+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BARKAPOWER', 'https://www.dse.com.bd/displayCompany.php?name=BARKAPOWER')
+[2024-09-27T23:27:59.965+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:00.003+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:00.037+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BATASHOE', 'https://www.dse.com.bd/displayCompany.php?name=BATASHOE')
+[2024-09-27T23:28:00.066+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:00.159+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:00.225+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BATBC', 'https://www.dse.com.bd/displayCompany.php?name=BATBC')
+[2024-09-27T23:28:00.233+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:00.304+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:00.334+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BAYLEASING', 'https://www.dse.com.bd/displayCompany.php?name=BAYLEASING')
+[2024-09-27T23:28:00.356+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:00.453+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:00.502+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BBS', 'https://www.dse.com.bd/displayCompany.php?name=BBS')
+[2024-09-27T23:28:00.521+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:00.596+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:00.639+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BBSCABLES', 'https://www.dse.com.bd/displayCompany.php?name=BBSCABLES')
+[2024-09-27T23:28:00.669+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:00.718+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:00.732+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BDAUTOCA', 'https://www.dse.com.bd/displayCompany.php?name=BDAUTOCA')
+[2024-09-27T23:28:00.756+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:00.841+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:00.882+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BDCOM', 'https://www.dse.com.bd/displayCompany.php?name=BDCOM')
+[2024-09-27T23:28:00.893+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:00.958+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:00.979+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BDFINANCE', 'https://www.dse.com.bd/displayCompany.php?name=BDFINANCE')
+[2024-09-27T23:28:00.990+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:01.045+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:01.074+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BDLAMPS', 'https://www.dse.com.bd/displayCompany.php?name=BDLAMPS')
+[2024-09-27T23:28:01.084+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:01.151+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:01.188+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BDSERVICE', 'https://www.dse.com.bd/displayCompany.php?name=BDSERVICE')
+[2024-09-27T23:28:01.214+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:01.253+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:01.306+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BDTHAI', 'https://www.dse.com.bd/displayCompany.php?name=BDTHAI')
+[2024-09-27T23:28:01.335+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:01.364+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:01.396+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BDTHAIFOOD', 'https://www.dse.com.bd/displayCompany.php?name=BDTHAIFOOD')
+[2024-09-27T23:28:01.401+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:01.436+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:01.457+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BDWELDING', 'https://www.dse.com.bd/displayCompany.php?name=BDWELDING')
+[2024-09-27T23:28:01.471+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:01.506+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:01.559+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BEACHHATCH', 'https://www.dse.com.bd/displayCompany.php?name=BEACHHATCH')
+[2024-09-27T23:28:01.571+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:01.631+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:01.668+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BEACONPHAR', 'https://www.dse.com.bd/displayCompany.php?name=BEACONPHAR')
+[2024-09-27T23:28:01.685+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:01.736+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:01.769+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BENGALWTL', 'https://www.dse.com.bd/displayCompany.php?name=BENGALWTL')
+[2024-09-27T23:28:01.823+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:01.868+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:01.927+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BERGERPBL', 'https://www.dse.com.bd/displayCompany.php?name=BERGERPBL')
+[2024-09-27T23:28:01.941+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:01.981+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:02.006+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BESTHLDNG', 'https://www.dse.com.bd/displayCompany.php?name=BESTHLDNG')
+[2024-09-27T23:28:02.018+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:02.089+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:02.184+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BEXIMCO', 'https://www.dse.com.bd/displayCompany.php?name=BEXIMCO')
+[2024-09-27T23:28:02.224+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:02.337+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:02.378+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BGIC', 'https://www.dse.com.bd/displayCompany.php?name=BGIC')
+[2024-09-27T23:28:02.387+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:02.534+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:02.627+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BIFC', 'https://www.dse.com.bd/displayCompany.php?name=BIFC')
+[2024-09-27T23:28:02.656+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:02.715+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:02.769+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BNICL', 'https://www.dse.com.bd/displayCompany.php?name=BNICL')
+[2024-09-27T23:28:02.779+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:02.855+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:02.880+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BPML', 'https://www.dse.com.bd/displayCompany.php?name=BPML')
+[2024-09-27T23:28:02.907+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:02.996+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:03.047+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BPPL', 'https://www.dse.com.bd/displayCompany.php?name=BPPL')
+[2024-09-27T23:28:03.086+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:03.154+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:03.179+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BRACBANK', 'https://www.dse.com.bd/displayCompany.php?name=BRACBANK')
+[2024-09-27T23:28:03.188+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:03.256+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:03.290+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BSC', 'https://www.dse.com.bd/displayCompany.php?name=BSC')
+[2024-09-27T23:28:03.300+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:03.385+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:03.419+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BSCPLC', 'https://www.dse.com.bd/displayCompany.php?name=BSCPLC')
+[2024-09-27T23:28:03.425+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:03.505+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:03.569+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BSRMLTD', 'https://www.dse.com.bd/displayCompany.php?name=BSRMLTD')
+[2024-09-27T23:28:03.596+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:03.665+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:03.744+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BSRMSTEEL', 'https://www.dse.com.bd/displayCompany.php?name=BSRMSTEEL')
+[2024-09-27T23:28:03.755+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:03.816+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:03.877+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('BXPHARMA', 'https://www.dse.com.bd/displayCompany.php?name=BXPHARMA')
+[2024-09-27T23:28:03.896+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:03.963+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:03.997+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CAPITECGBF', 'https://www.dse.com.bd/displayCompany.php?name=CAPITECGBF')
+[2024-09-27T23:28:04.020+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:04.074+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:04.146+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CAPMBDBLMF', 'https://www.dse.com.bd/displayCompany.php?name=CAPMBDBLMF')
+[2024-09-27T23:28:04.161+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:04.207+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:04.260+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CAPMIBBLMF', 'https://www.dse.com.bd/displayCompany.php?name=CAPMIBBLMF')
+[2024-09-27T23:28:04.279+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:04.326+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:04.366+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CENTRALINS', 'https://www.dse.com.bd/displayCompany.php?name=CENTRALINS')
+[2024-09-27T23:28:04.378+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:04.427+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:04.447+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CENTRALPHL', 'https://www.dse.com.bd/displayCompany.php?name=CENTRALPHL')
+[2024-09-27T23:28:04.464+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:04.529+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:04.566+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CITYBANK', 'https://www.dse.com.bd/displayCompany.php?name=CITYBANK')
+[2024-09-27T23:28:04.569+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:04.644+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:04.691+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CITYGENINS', 'https://www.dse.com.bd/displayCompany.php?name=CITYGENINS')
+[2024-09-27T23:28:04.709+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:04.805+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:04.831+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CLICL', 'https://www.dse.com.bd/displayCompany.php?name=CLICL')
+[2024-09-27T23:28:04.846+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:04.891+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:04.903+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CNATEX', 'https://www.dse.com.bd/displayCompany.php?name=CNATEX')
+[2024-09-27T23:28:04.912+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:04.981+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:04.995+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CONFIDCEM', 'https://www.dse.com.bd/displayCompany.php?name=CONFIDCEM')
+[2024-09-27T23:28:05.008+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:05.110+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:05.133+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CONTININS', 'https://www.dse.com.bd/displayCompany.php?name=CONTININS')
+[2024-09-27T23:28:05.137+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:05.203+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:05.225+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('COPPERTECH', 'https://www.dse.com.bd/displayCompany.php?name=COPPERTECH')
+[2024-09-27T23:28:05.230+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:05.262+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:05.336+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CROWNCEMNT', 'https://www.dse.com.bd/displayCompany.php?name=CROWNCEMNT')
+[2024-09-27T23:28:05.354+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:05.432+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:05.572+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CRYSTALINS', 'https://www.dse.com.bd/displayCompany.php?name=CRYSTALINS')
+[2024-09-27T23:28:05.584+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:05.645+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:05.681+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('CVOPRL', 'https://www.dse.com.bd/displayCompany.php?name=CVOPRL')
+[2024-09-27T23:28:05.698+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:05.753+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:05.778+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DACCADYE', 'https://www.dse.com.bd/displayCompany.php?name=DACCADYE')
+[2024-09-27T23:28:05.786+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:05.807+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:05.824+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DAFODILCOM', 'https://www.dse.com.bd/displayCompany.php?name=DAFODILCOM')
+[2024-09-27T23:28:05.831+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:05.882+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:05.905+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DBH', 'https://www.dse.com.bd/displayCompany.php?name=DBH')
+[2024-09-27T23:28:05.936+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:06.013+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:06.059+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DBH1STMF', 'https://www.dse.com.bd/displayCompany.php?name=DBH1STMF')
+[2024-09-27T23:28:06.076+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:06.139+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:06.158+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DELTALIFE', 'https://www.dse.com.bd/displayCompany.php?name=DELTALIFE')
+[2024-09-27T23:28:06.190+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:06.265+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:06.291+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DELTASPINN', 'https://www.dse.com.bd/displayCompany.php?name=DELTASPINN')
+[2024-09-27T23:28:06.301+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:06.355+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:06.388+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DESCO', 'https://www.dse.com.bd/displayCompany.php?name=DESCO')
+[2024-09-27T23:28:06.398+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:06.469+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:06.496+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DESHBANDHU', 'https://www.dse.com.bd/displayCompany.php?name=DESHBANDHU')
+[2024-09-27T23:28:06.505+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:06.575+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:06.618+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DGIC', 'https://www.dse.com.bd/displayCompany.php?name=DGIC')
+[2024-09-27T23:28:06.656+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:06.713+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:06.756+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DHAKABANK', 'https://www.dse.com.bd/displayCompany.php?name=DHAKABANK')
+[2024-09-27T23:28:06.777+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:06.832+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:06.885+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DHAKAINS', 'https://www.dse.com.bd/displayCompany.php?name=DHAKAINS')
+[2024-09-27T23:28:06.898+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:06.966+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:07.000+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DOMINAGE', 'https://www.dse.com.bd/displayCompany.php?name=DOMINAGE')
+[2024-09-27T23:28:07.009+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:07.070+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:07.126+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DOREENPWR', 'https://www.dse.com.bd/displayCompany.php?name=DOREENPWR')
+[2024-09-27T23:28:07.139+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:07.183+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:07.213+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DSHGARME', 'https://www.dse.com.bd/displayCompany.php?name=DSHGARME')
+[2024-09-27T23:28:07.227+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:07.257+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:07.306+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DSSL', 'https://www.dse.com.bd/displayCompany.php?name=DSSL')
+[2024-09-27T23:28:07.323+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:07.374+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:07.409+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DULAMIACOT', 'https://www.dse.com.bd/displayCompany.php?name=DULAMIACOT')
+[2024-09-27T23:28:07.426+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:07.493+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:07.522+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('DUTCHBANGL', 'https://www.dse.com.bd/displayCompany.php?name=DUTCHBANGL')
+[2024-09-27T23:28:07.546+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:07.640+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:07.701+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EASTERNINS', 'https://www.dse.com.bd/displayCompany.php?name=EASTERNINS')
+[2024-09-27T23:28:07.749+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:07.813+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:07.841+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EASTLAND', 'https://www.dse.com.bd/displayCompany.php?name=EASTLAND')
+[2024-09-27T23:28:07.856+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:07.952+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:07.984+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EASTRNLUB', 'https://www.dse.com.bd/displayCompany.php?name=EASTRNLUB')
+[2024-09-27T23:28:08.002+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:08.074+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:08.085+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EBL', 'https://www.dse.com.bd/displayCompany.php?name=EBL')
+[2024-09-27T23:28:08.097+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:08.176+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:08.206+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EBL1STMF', 'https://www.dse.com.bd/displayCompany.php?name=EBL1STMF')
+[2024-09-27T23:28:08.209+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:08.281+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:08.317+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EBLNRBMF', 'https://www.dse.com.bd/displayCompany.php?name=EBLNRBMF')
+[2024-09-27T23:28:08.329+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:08.373+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:08.402+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ECABLES', 'https://www.dse.com.bd/displayCompany.php?name=ECABLES')
+[2024-09-27T23:28:08.410+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:08.481+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:08.508+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EGEN', 'https://www.dse.com.bd/displayCompany.php?name=EGEN')
+[2024-09-27T23:28:08.520+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:08.588+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:08.623+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EHL', 'https://www.dse.com.bd/displayCompany.php?name=EHL')
+[2024-09-27T23:28:08.658+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:08.723+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:08.762+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EIL', 'https://www.dse.com.bd/displayCompany.php?name=EIL')
+[2024-09-27T23:28:08.786+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:08.875+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:08.908+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EMERALDOIL', 'https://www.dse.com.bd/displayCompany.php?name=EMERALDOIL')
+[2024-09-27T23:28:08.937+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:09.004+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:09.027+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ENVOYTEX', 'https://www.dse.com.bd/displayCompany.php?name=ENVOYTEX')
+[2024-09-27T23:28:09.047+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:09.097+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:09.149+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EPGL', 'https://www.dse.com.bd/displayCompany.php?name=EPGL')
+[2024-09-27T23:28:09.182+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:09.277+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:09.314+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ESQUIRENIT', 'https://www.dse.com.bd/displayCompany.php?name=ESQUIRENIT')
+[2024-09-27T23:28:09.332+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:09.445+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:09.470+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ETL', 'https://www.dse.com.bd/displayCompany.php?name=ETL')
+[2024-09-27T23:28:09.476+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:09.569+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:09.606+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EXIM1STMF', 'https://www.dse.com.bd/displayCompany.php?name=EXIM1STMF')
+[2024-09-27T23:28:09.614+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:09.682+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:09.701+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('EXIMBANK', 'https://www.dse.com.bd/displayCompany.php?name=EXIMBANK')
+[2024-09-27T23:28:09.705+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:09.728+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:09.785+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FAMILYTEX', 'https://www.dse.com.bd/displayCompany.php?name=FAMILYTEX')
+[2024-09-27T23:28:09.790+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:09.843+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:09.871+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FARCHEM', 'https://www.dse.com.bd/displayCompany.php?name=FARCHEM')
+[2024-09-27T23:28:09.879+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:09.970+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:10.010+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FAREASTFIN', 'https://www.dse.com.bd/displayCompany.php?name=FAREASTFIN')
+[2024-09-27T23:28:10.022+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:10.063+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:10.116+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FAREASTLIF', 'https://www.dse.com.bd/displayCompany.php?name=FAREASTLIF')
+[2024-09-27T23:28:10.120+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:10.174+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:10.194+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FASFIN', 'https://www.dse.com.bd/displayCompany.php?name=FASFIN')
+[2024-09-27T23:28:10.213+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:10.294+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:10.326+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FBFIF', 'https://www.dse.com.bd/displayCompany.php?name=FBFIF')
+[2024-09-27T23:28:10.368+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:10.475+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:10.601+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FEDERALINS', 'https://www.dse.com.bd/displayCompany.php?name=FEDERALINS')
+[2024-09-27T23:28:10.619+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:10.687+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:10.737+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FEKDIL', 'https://www.dse.com.bd/displayCompany.php?name=FEKDIL')
+[2024-09-27T23:28:10.797+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:10.857+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:10.911+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FINEFOODS', 'https://www.dse.com.bd/displayCompany.php?name=FINEFOODS')
+[2024-09-27T23:28:10.967+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:11.147+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:11.256+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FIRSTFIN', 'https://www.dse.com.bd/displayCompany.php?name=FIRSTFIN')
+[2024-09-27T23:28:11.330+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:11.481+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:11.524+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FIRSTSBANK', 'https://www.dse.com.bd/displayCompany.php?name=FIRSTSBANK')
+[2024-09-27T23:28:11.544+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:11.633+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:11.651+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FORTUNE', 'https://www.dse.com.bd/displayCompany.php?name=FORTUNE')
+[2024-09-27T23:28:11.657+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:11.720+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:11.749+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FUWANGCER', 'https://www.dse.com.bd/displayCompany.php?name=FUWANGCER')
+[2024-09-27T23:28:11.772+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:11.824+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:11.860+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('FUWANGFOOD', 'https://www.dse.com.bd/displayCompany.php?name=FUWANGFOOD')
+[2024-09-27T23:28:11.876+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:11.941+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:12.003+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GBBPOWER', 'https://www.dse.com.bd/displayCompany.php?name=GBBPOWER')
+[2024-09-27T23:28:12.044+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:12.114+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:12.145+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GEMINISEA', 'https://www.dse.com.bd/displayCompany.php?name=GEMINISEA')
+[2024-09-27T23:28:12.194+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:12.341+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:12.373+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GENEXIL', 'https://www.dse.com.bd/displayCompany.php?name=GENEXIL')
+[2024-09-27T23:28:12.409+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:12.523+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:12.616+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GENNEXT', 'https://www.dse.com.bd/displayCompany.php?name=GENNEXT')
+[2024-09-27T23:28:12.662+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:12.737+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:12.750+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GHAIL', 'https://www.dse.com.bd/displayCompany.php?name=GHAIL')
+[2024-09-27T23:28:12.763+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:12.906+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:12.964+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GHCL', 'https://www.dse.com.bd/displayCompany.php?name=GHCL')
+[2024-09-27T23:28:13.039+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:13.135+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:13.177+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GIB', 'https://www.dse.com.bd/displayCompany.php?name=GIB')
+[2024-09-27T23:28:13.186+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:13.245+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:13.276+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GLDNJMF', 'https://www.dse.com.bd/displayCompany.php?name=GLDNJMF')
+[2024-09-27T23:28:13.294+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:13.311+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:13.343+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GLOBALINS', 'https://www.dse.com.bd/displayCompany.php?name=GLOBALINS')
+[2024-09-27T23:28:13.364+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:13.455+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:13.496+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GOLDENSON', 'https://www.dse.com.bd/displayCompany.php?name=GOLDENSON')
+[2024-09-27T23:28:13.516+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:13.585+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:13.604+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GP', 'https://www.dse.com.bd/displayCompany.php?name=GP')
+[2024-09-27T23:28:13.618+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:13.717+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:13.749+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GPHISPAT', 'https://www.dse.com.bd/displayCompany.php?name=GPHISPAT')
+[2024-09-27T23:28:13.762+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:13.883+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:13.978+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GQBALLPEN', 'https://www.dse.com.bd/displayCompany.php?name=GQBALLPEN')
+[2024-09-27T23:28:13.989+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:14.065+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:14.130+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GRAMEENS2', 'https://www.dse.com.bd/displayCompany.php?name=GRAMEENS2')
+[2024-09-27T23:28:14.137+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:14.247+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:14.278+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GREENDELMF', 'https://www.dse.com.bd/displayCompany.php?name=GREENDELMF')
+[2024-09-27T23:28:14.295+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:14.364+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:14.405+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GREENDELT', 'https://www.dse.com.bd/displayCompany.php?name=GREENDELT')
+[2024-09-27T23:28:14.420+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:14.515+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:14.564+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('GSPFINANCE', 'https://www.dse.com.bd/displayCompany.php?name=GSPFINANCE')
+[2024-09-27T23:28:14.592+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:14.675+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:14.717+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('HAKKANIPUL', 'https://www.dse.com.bd/displayCompany.php?name=HAKKANIPUL')
+[2024-09-27T23:28:14.727+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:14.799+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:14.822+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('HAMI', 'https://www.dse.com.bd/displayCompany.php?name=HAMI')
+[2024-09-27T23:28:14.833+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:14.891+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:14.915+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('HEIDELBCEM', 'https://www.dse.com.bd/displayCompany.php?name=HEIDELBCEM')
+[2024-09-27T23:28:14.927+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:14.988+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:15.019+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('HFL', 'https://www.dse.com.bd/displayCompany.php?name=HFL')
+[2024-09-27T23:28:15.032+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:15.074+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:15.106+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('HRTEX', 'https://www.dse.com.bd/displayCompany.php?name=HRTEX')
+[2024-09-27T23:28:15.118+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:15.159+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:15.209+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('HWAWELLTEX', 'https://www.dse.com.bd/displayCompany.php?name=HWAWELLTEX')
+[2024-09-27T23:28:15.227+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:15.298+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:15.329+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('IBNSINA', 'https://www.dse.com.bd/displayCompany.php?name=IBNSINA')
+[2024-09-27T23:28:15.346+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:15.436+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:15.486+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('IBP', 'https://www.dse.com.bd/displayCompany.php?name=IBP')
+[2024-09-27T23:28:15.500+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:15.565+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:15.457+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ICB', 'https://www.dse.com.bd/displayCompany.php?name=ICB')
+[2024-09-27T23:28:15.474+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:15.540+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:15.596+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ICB3RDNRB', 'https://www.dse.com.bd/displayCompany.php?name=ICB3RDNRB')
+[2024-09-27T23:28:15.614+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:15.729+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:15.754+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ICBAGRANI1', 'https://www.dse.com.bd/displayCompany.php?name=ICBAGRANI1')
+[2024-09-27T23:28:15.762+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:15.947+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:16.002+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ICBAMCL2ND', 'https://www.dse.com.bd/displayCompany.php?name=ICBAMCL2ND')
+[2024-09-27T23:28:16.029+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:16.151+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:16.182+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ICBEPMF1S1', 'https://www.dse.com.bd/displayCompany.php?name=ICBEPMF1S1')
+[2024-09-27T23:28:16.202+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:16.278+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:16.307+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ICBIBANK', 'https://www.dse.com.bd/displayCompany.php?name=ICBIBANK')
+[2024-09-27T23:28:16.327+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:16.386+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:16.442+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ICBSONALI1', 'https://www.dse.com.bd/displayCompany.php?name=ICBSONALI1')
+[2024-09-27T23:28:16.455+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:16.508+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:16.536+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ICICL', 'https://www.dse.com.bd/displayCompany.php?name=ICICL')
+[2024-09-27T23:28:16.547+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:16.613+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:16.637+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('IDLC', 'https://www.dse.com.bd/displayCompany.php?name=IDLC')
+[2024-09-27T23:28:16.657+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:16.711+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:16.758+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('IFADAUTOS', 'https://www.dse.com.bd/displayCompany.php?name=IFADAUTOS')
+[2024-09-27T23:28:16.764+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:16.813+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:16.844+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('IFIC', 'https://www.dse.com.bd/displayCompany.php?name=IFIC')
+[2024-09-27T23:28:16.869+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:16.948+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:17.000+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('IFIC1STMF', 'https://www.dse.com.bd/displayCompany.php?name=IFIC1STMF')
+[2024-09-27T23:28:17.018+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:17.058+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:17.102+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('IFILISLMF1', 'https://www.dse.com.bd/displayCompany.php?name=IFILISLMF1')
+[2024-09-27T23:28:17.118+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:17.202+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:17.224+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ILFSL', 'https://www.dse.com.bd/displayCompany.php?name=ILFSL')
+[2024-09-27T23:28:17.232+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:17.277+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:17.291+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('INDEXAGRO', 'https://www.dse.com.bd/displayCompany.php?name=INDEXAGRO')
+[2024-09-27T23:28:17.308+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:17.358+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:17.389+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('INTECH', 'https://www.dse.com.bd/displayCompany.php?name=INTECH')
+[2024-09-27T23:28:17.406+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:17.443+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:17.472+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('INTRACO', 'https://www.dse.com.bd/displayCompany.php?name=INTRACO')
+[2024-09-27T23:28:17.488+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:17.552+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:17.584+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('IPDC', 'https://www.dse.com.bd/displayCompany.php?name=IPDC')
+[2024-09-27T23:28:17.587+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:17.638+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:17.657+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ISLAMIBANK', 'https://www.dse.com.bd/displayCompany.php?name=ISLAMIBANK')
+[2024-09-27T23:28:17.662+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:17.700+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:17.723+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ISLAMICFIN', 'https://www.dse.com.bd/displayCompany.php?name=ISLAMICFIN')
+[2024-09-27T23:28:17.731+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:17.776+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:17.795+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ISLAMIINS', 'https://www.dse.com.bd/displayCompany.php?name=ISLAMIINS')
+[2024-09-27T23:28:17.805+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:17.848+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:17.863+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ISNLTD', 'https://www.dse.com.bd/displayCompany.php?name=ISNLTD')
+[2024-09-27T23:28:17.868+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:17.901+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:17.947+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ITC', 'https://www.dse.com.bd/displayCompany.php?name=ITC')
+[2024-09-27T23:28:18.002+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:18.109+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:18.142+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('JAMUNABANK', 'https://www.dse.com.bd/displayCompany.php?name=JAMUNABANK')
+[2024-09-27T23:28:18.167+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:18.267+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:18.281+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('JAMUNAOIL', 'https://www.dse.com.bd/displayCompany.php?name=JAMUNAOIL')
+[2024-09-27T23:28:18.285+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:18.323+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:18.371+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('JANATAINS', 'https://www.dse.com.bd/displayCompany.php?name=JANATAINS')
+[2024-09-27T23:28:18.389+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:18.462+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:18.617+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('JHRML', 'https://www.dse.com.bd/displayCompany.php?name=JHRML')
+[2024-09-27T23:28:18.636+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:18.685+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:18.746+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('JMISMDL', 'https://www.dse.com.bd/displayCompany.php?name=JMISMDL')
+[2024-09-27T23:28:18.765+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:18.823+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:18.859+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('JUTESPINN', 'https://www.dse.com.bd/displayCompany.php?name=JUTESPINN')
+[2024-09-27T23:28:18.869+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:18.971+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:18.995+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('KARNAPHULI', 'https://www.dse.com.bd/displayCompany.php?name=KARNAPHULI')
+[2024-09-27T23:28:19.003+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:19.066+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:19.169+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('KAY&QUE', 'https://www.dse.com.bd/displayCompany.php?name=KAY&QUE')
+[2024-09-27T23:28:19.217+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:19.332+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:19.390+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('KBPPWBIL', 'https://www.dse.com.bd/displayCompany.php?name=KBPPWBIL')
+[2024-09-27T23:28:19.486+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:19.594+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:19.667+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('KDSALTD', 'https://www.dse.com.bd/displayCompany.php?name=KDSALTD')
+[2024-09-27T23:28:19.684+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:19.774+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:19.816+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('KEYACOSMET', 'https://www.dse.com.bd/displayCompany.php?name=KEYACOSMET')
+[2024-09-27T23:28:19.831+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:19.899+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:19.957+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('KOHINOOR', 'https://www.dse.com.bd/displayCompany.php?name=KOHINOOR')
+[2024-09-27T23:28:19.976+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:20.052+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:20.085+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('KPCL', 'https://www.dse.com.bd/displayCompany.php?name=KPCL')
+[2024-09-27T23:28:20.117+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:20.138+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:20.169+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('KPPL', 'https://www.dse.com.bd/displayCompany.php?name=KPPL')
+[2024-09-27T23:28:20.179+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:20.220+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:20.242+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('KTL', 'https://www.dse.com.bd/displayCompany.php?name=KTL')
+[2024-09-27T23:28:20.254+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:20.308+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:20.321+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('LANKABAFIN', 'https://www.dse.com.bd/displayCompany.php?name=LANKABAFIN')
+[2024-09-27T23:28:20.337+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:20.448+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:20.500+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('LEGACYFOOT', 'https://www.dse.com.bd/displayCompany.php?name=LEGACYFOOT')
+[2024-09-27T23:28:20.508+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:20.638+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:20.669+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('LHBL', 'https://www.dse.com.bd/displayCompany.php?name=LHBL')
+[2024-09-27T23:28:20.677+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:20.736+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:20.769+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('LIBRAINFU', 'https://www.dse.com.bd/displayCompany.php?name=LIBRAINFU')
+[2024-09-27T23:28:20.809+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:20.916+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:20.935+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('LINDEBD', 'https://www.dse.com.bd/displayCompany.php?name=LINDEBD')
+[2024-09-27T23:28:20.943+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:21.002+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:21.030+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('LOVELLO', 'https://www.dse.com.bd/displayCompany.php?name=LOVELLO')
+[2024-09-27T23:28:21.041+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:21.144+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:21.162+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('LRBDL', 'https://www.dse.com.bd/displayCompany.php?name=LRBDL')
+[2024-09-27T23:28:21.170+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:21.217+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:21.246+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('LRGLOBMF1', 'https://www.dse.com.bd/displayCompany.php?name=LRGLOBMF1')
+[2024-09-27T23:28:21.252+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:21.294+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:21.331+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MAKSONSPIN', 'https://www.dse.com.bd/displayCompany.php?name=MAKSONSPIN')
+[2024-09-27T23:28:21.342+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:21.406+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:21.427+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MALEKSPIN', 'https://www.dse.com.bd/displayCompany.php?name=MALEKSPIN')
+[2024-09-27T23:28:21.430+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:21.551+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:21.571+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MARICO', 'https://www.dse.com.bd/displayCompany.php?name=MARICO')
+[2024-09-27T23:28:21.580+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:21.645+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:21.678+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MATINSPINN', 'https://www.dse.com.bd/displayCompany.php?name=MATINSPINN')
+[2024-09-27T23:28:21.685+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:21.738+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:21.768+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MBL1STMF', 'https://www.dse.com.bd/displayCompany.php?name=MBL1STMF')
+[2024-09-27T23:28:21.774+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:21.834+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:21.868+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MEGCONMILK', 'https://www.dse.com.bd/displayCompany.php?name=MEGCONMILK')
+[2024-09-27T23:28:21.884+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:21.958+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:22.018+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MEGHNACEM', 'https://www.dse.com.bd/displayCompany.php?name=MEGHNACEM')
+[2024-09-27T23:28:22.031+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:22.086+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:22.139+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MEGHNAINS', 'https://www.dse.com.bd/displayCompany.php?name=MEGHNAINS')
+[2024-09-27T23:28:22.151+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:22.213+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:22.296+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MEGHNALIFE', 'https://www.dse.com.bd/displayCompany.php?name=MEGHNALIFE')
+[2024-09-27T23:28:22.307+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:22.409+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:22.455+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MEGHNAPET', 'https://www.dse.com.bd/displayCompany.php?name=MEGHNAPET')
+[2024-09-27T23:28:22.477+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:22.544+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:22.562+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MERCANBANK', 'https://www.dse.com.bd/displayCompany.php?name=MERCANBANK')
+[2024-09-27T23:28:22.566+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:22.623+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:22.662+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MERCINS', 'https://www.dse.com.bd/displayCompany.php?name=MERCINS')
+[2024-09-27T23:28:22.685+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:22.713+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:22.728+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('METROSPIN', 'https://www.dse.com.bd/displayCompany.php?name=METROSPIN')
+[2024-09-27T23:28:22.738+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:22.816+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:22.834+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MHSML', 'https://www.dse.com.bd/displayCompany.php?name=MHSML')
+[2024-09-27T23:28:22.839+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:22.915+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:22.929+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MIDASFIN', 'https://www.dse.com.bd/displayCompany.php?name=MIDASFIN')
+[2024-09-27T23:28:22.937+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:22.977+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:23.017+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MIDLANDBNK', 'https://www.dse.com.bd/displayCompany.php?name=MIDLANDBNK')
+[2024-09-27T23:28:23.043+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:23.181+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:23.208+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MIRACLEIND', 'https://www.dse.com.bd/displayCompany.php?name=MIRACLEIND')
+[2024-09-27T23:28:23.228+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:23.342+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:23.397+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MIRAKHTER', 'https://www.dse.com.bd/displayCompany.php?name=MIRAKHTER')
+[2024-09-27T23:28:23.404+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:23.496+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:23.535+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MITHUNKNIT', 'https://www.dse.com.bd/displayCompany.php?name=MITHUNKNIT')
+[2024-09-27T23:28:23.550+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:23.652+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:23.705+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MJLBD', 'https://www.dse.com.bd/displayCompany.php?name=MJLBD')
+[2024-09-27T23:28:23.727+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:23.766+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:23.789+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MLDYEING', 'https://www.dse.com.bd/displayCompany.php?name=MLDYEING')
+[2024-09-27T23:28:23.808+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:23.887+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:23.914+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MONNOAGML', 'https://www.dse.com.bd/displayCompany.php?name=MONNOAGML')
+[2024-09-27T23:28:23.928+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:23.976+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:23.991+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MONNOCERA', 'https://www.dse.com.bd/displayCompany.php?name=MONNOCERA')
+[2024-09-27T23:28:23.998+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:24.048+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:24.083+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MONNOFABR', 'https://www.dse.com.bd/displayCompany.php?name=MONNOFABR')
+[2024-09-27T23:28:24.106+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:24.196+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:24.235+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MONOSPOOL', 'https://www.dse.com.bd/displayCompany.php?name=MONOSPOOL')
+[2024-09-27T23:28:24.244+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:24.326+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:24.357+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MPETROLEUM', 'https://www.dse.com.bd/displayCompany.php?name=MPETROLEUM')
+[2024-09-27T23:28:24.380+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:24.454+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:24.486+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('MTB', 'https://www.dse.com.bd/displayCompany.php?name=MTB')
+[2024-09-27T23:28:24.506+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:24.559+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:24.590+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NAHEEACP', 'https://www.dse.com.bd/displayCompany.php?name=NAHEEACP')
+[2024-09-27T23:28:24.601+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:24.656+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:24.683+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NATLIFEINS', 'https://www.dse.com.bd/displayCompany.php?name=NATLIFEINS')
+[2024-09-27T23:28:24.701+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:24.736+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:24.765+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NAVANACNG', 'https://www.dse.com.bd/displayCompany.php?name=NAVANACNG')
+[2024-09-27T23:28:24.771+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:24.843+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:24.867+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NAVANAPHAR', 'https://www.dse.com.bd/displayCompany.php?name=NAVANAPHAR')
+[2024-09-27T23:28:24.871+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:24.963+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:24.993+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NBL', 'https://www.dse.com.bd/displayCompany.php?name=NBL')
+[2024-09-27T23:28:25.001+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:25.053+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:25.098+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NCCBANK', 'https://www.dse.com.bd/displayCompany.php?name=NCCBANK')
+[2024-09-27T23:28:25.117+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:25.178+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:25.194+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NCCBLMF1', 'https://www.dse.com.bd/displayCompany.php?name=NCCBLMF1')
+[2024-09-27T23:28:25.201+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:25.232+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:25.259+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NEWLINE', 'https://www.dse.com.bd/displayCompany.php?name=NEWLINE')
+[2024-09-27T23:28:25.287+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:25.318+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:25.349+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NFML', 'https://www.dse.com.bd/displayCompany.php?name=NFML')
+[2024-09-27T23:28:25.360+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:25.428+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:25.458+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NHFIL', 'https://www.dse.com.bd/displayCompany.php?name=NHFIL')
+[2024-09-27T23:28:25.468+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:25.540+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:25.567+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NITOLINS', 'https://www.dse.com.bd/displayCompany.php?name=NITOLINS')
+[2024-09-27T23:28:25.588+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:25.656+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:25.686+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NORTHERN', 'https://www.dse.com.bd/displayCompany.php?name=NORTHERN')
+[2024-09-27T23:28:25.700+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:25.748+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:25.773+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NORTHRNINS', 'https://www.dse.com.bd/displayCompany.php?name=NORTHRNINS')
+[2024-09-27T23:28:25.787+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:25.914+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:25.968+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NPOLYMER', 'https://www.dse.com.bd/displayCompany.php?name=NPOLYMER')
+[2024-09-27T23:28:25.977+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:26.032+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:26.062+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NRBBANK', 'https://www.dse.com.bd/displayCompany.php?name=NRBBANK')
+[2024-09-27T23:28:26.074+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:26.158+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:26.178+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NRBCBANK', 'https://www.dse.com.bd/displayCompany.php?name=NRBCBANK')
+[2024-09-27T23:28:26.189+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:26.252+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:26.297+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NTC', 'https://www.dse.com.bd/displayCompany.php?name=NTC')
+[2024-09-27T23:28:26.322+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:26.391+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:26.416+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NTLTUBES', 'https://www.dse.com.bd/displayCompany.php?name=NTLTUBES')
+[2024-09-27T23:28:26.428+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:26.543+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:26.699+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('NURANI', 'https://www.dse.com.bd/displayCompany.php?name=NURANI')
+[2024-09-27T23:28:26.707+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:26.918+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:27.046+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('OAL', 'https://www.dse.com.bd/displayCompany.php?name=OAL')
+[2024-09-27T23:28:27.206+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:27.307+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:27.323+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('OIMEX', 'https://www.dse.com.bd/displayCompany.php?name=OIMEX')
+[2024-09-27T23:28:27.332+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:27.376+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:27.436+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('OLYMPIC', 'https://www.dse.com.bd/displayCompany.php?name=OLYMPIC')
+[2024-09-27T23:28:27.468+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:27.516+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:27.648+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ONEBANKPLC', 'https://www.dse.com.bd/displayCompany.php?name=ONEBANKPLC')
+[2024-09-27T23:28:27.767+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:27.856+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:27.887+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ORIONINFU', 'https://www.dse.com.bd/displayCompany.php?name=ORIONINFU')
+[2024-09-27T23:28:27.902+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:27.966+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:27.991+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ORIONPHARM', 'https://www.dse.com.bd/displayCompany.php?name=ORIONPHARM')
+[2024-09-27T23:28:28.001+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:28.039+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:28.046+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PADMALIFE', 'https://www.dse.com.bd/displayCompany.php?name=PADMALIFE')
+[2024-09-27T23:28:28.050+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:28.070+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:28.081+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PADMAOIL', 'https://www.dse.com.bd/displayCompany.php?name=PADMAOIL')
+[2024-09-27T23:28:28.091+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:28.129+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:28.177+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PAPERPROC', 'https://www.dse.com.bd/displayCompany.php?name=PAPERPROC')
+[2024-09-27T23:28:28.189+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:28.225+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:28.241+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PARAMOUNT', 'https://www.dse.com.bd/displayCompany.php?name=PARAMOUNT')
+[2024-09-27T23:28:28.245+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:28.314+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:28.343+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PDL', 'https://www.dse.com.bd/displayCompany.php?name=PDL')
+[2024-09-27T23:28:28.376+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:28.410+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:28.460+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PENINSULA', 'https://www.dse.com.bd/displayCompany.php?name=PENINSULA')
+[2024-09-27T23:28:28.473+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:28.566+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:28.592+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PEOPLESINS', 'https://www.dse.com.bd/displayCompany.php?name=PEOPLESINS')
+[2024-09-27T23:28:28.596+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:28.676+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:28.707+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PF1STMF', 'https://www.dse.com.bd/displayCompany.php?name=PF1STMF')
+[2024-09-27T23:28:28.735+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:28.785+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:28.812+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PHARMAID', 'https://www.dse.com.bd/displayCompany.php?name=PHARMAID')
+[2024-09-27T23:28:28.834+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:28.979+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:29.038+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PHENIXINS', 'https://www.dse.com.bd/displayCompany.php?name=PHENIXINS')
+[2024-09-27T23:28:29.050+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:29.129+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:29.187+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PHOENIXFIN', 'https://www.dse.com.bd/displayCompany.php?name=PHOENIXFIN')
+[2024-09-27T23:28:29.226+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:29.287+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:29.315+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PHPMF1', 'https://www.dse.com.bd/displayCompany.php?name=PHPMF1')
+[2024-09-27T23:28:29.318+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:29.392+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:29.419+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PIONEERINS', 'https://www.dse.com.bd/displayCompany.php?name=PIONEERINS')
+[2024-09-27T23:28:29.446+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:29.518+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:29.560+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PLFSL', 'https://www.dse.com.bd/displayCompany.php?name=PLFSL')
+[2024-09-27T23:28:29.611+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:29.717+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:29.757+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('POPULAR1MF', 'https://www.dse.com.bd/displayCompany.php?name=POPULAR1MF')
+[2024-09-27T23:28:29.776+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:29.889+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:29.984+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('POPULARLIF', 'https://www.dse.com.bd/displayCompany.php?name=POPULARLIF')
+[2024-09-27T23:28:30.067+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:30.197+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:30.219+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('POWERGRID', 'https://www.dse.com.bd/displayCompany.php?name=POWERGRID')
+[2024-09-27T23:28:30.225+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:30.326+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:30.377+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PRAGATIINS', 'https://www.dse.com.bd/displayCompany.php?name=PRAGATIINS')
+[2024-09-27T23:28:30.417+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:30.474+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:30.490+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PRAGATILIF', 'https://www.dse.com.bd/displayCompany.php?name=PRAGATILIF')
+[2024-09-27T23:28:30.496+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:30.550+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:30.578+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PREMIERBAN', 'https://www.dse.com.bd/displayCompany.php?name=PREMIERBAN')
+[2024-09-27T23:28:30.598+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:30.665+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:30.734+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PREMIERCEM', 'https://www.dse.com.bd/displayCompany.php?name=PREMIERCEM')
+[2024-09-27T23:28:30.755+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:30.846+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:30.890+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PREMIERLEA', 'https://www.dse.com.bd/displayCompany.php?name=PREMIERLEA')
+[2024-09-27T23:28:30.917+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:30.995+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:31.047+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PRIME1ICBA', 'https://www.dse.com.bd/displayCompany.php?name=PRIME1ICBA')
+[2024-09-27T23:28:31.063+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:31.234+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:31.281+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PRIMEBANK', 'https://www.dse.com.bd/displayCompany.php?name=PRIMEBANK')
+[2024-09-27T23:28:31.285+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:31.367+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:31.415+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PRIMEFIN', 'https://www.dse.com.bd/displayCompany.php?name=PRIMEFIN')
+[2024-09-27T23:28:31.436+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:31.535+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:31.565+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PRIMEINSUR', 'https://www.dse.com.bd/displayCompany.php?name=PRIMEINSUR')
+[2024-09-27T23:28:31.577+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:31.627+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:31.648+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PRIMELIFE', 'https://www.dse.com.bd/displayCompany.php?name=PRIMELIFE')
+[2024-09-27T23:28:31.657+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:31.733+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:31.760+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PRIMETEX', 'https://www.dse.com.bd/displayCompany.php?name=PRIMETEX')
+[2024-09-27T23:28:31.783+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:31.822+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:31.854+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PROGRESLIF', 'https://www.dse.com.bd/displayCompany.php?name=PROGRESLIF')
+[2024-09-27T23:28:31.859+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:31.887+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:31.906+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PROVATIINS', 'https://www.dse.com.bd/displayCompany.php?name=PROVATIINS')
+[2024-09-27T23:28:31.913+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:31.960+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:31.999+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PTL', 'https://www.dse.com.bd/displayCompany.php?name=PTL')
+[2024-09-27T23:28:32.017+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:32.064+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:32.085+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PUBALIBANK', 'https://www.dse.com.bd/displayCompany.php?name=PUBALIBANK')
+[2024-09-27T23:28:32.095+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:32.152+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:32.179+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('PURABIGEN', 'https://www.dse.com.bd/displayCompany.php?name=PURABIGEN')
+[2024-09-27T23:28:32.209+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:32.241+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:32.276+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('QUASEMIND', 'https://www.dse.com.bd/displayCompany.php?name=QUASEMIND')
+[2024-09-27T23:28:32.297+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:32.366+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:32.390+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('QUEENSOUTH', 'https://www.dse.com.bd/displayCompany.php?name=QUEENSOUTH')
+[2024-09-27T23:28:32.400+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:32.459+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:32.507+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RAHIMAFOOD', 'https://www.dse.com.bd/displayCompany.php?name=RAHIMAFOOD')
+[2024-09-27T23:28:32.529+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:32.582+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:32.624+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RAHIMTEXT', 'https://www.dse.com.bd/displayCompany.php?name=RAHIMTEXT')
+[2024-09-27T23:28:32.647+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:32.726+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:32.760+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RAKCERAMIC', 'https://www.dse.com.bd/displayCompany.php?name=RAKCERAMIC')
+[2024-09-27T23:28:32.770+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:32.814+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:32.849+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RANFOUNDRY', 'https://www.dse.com.bd/displayCompany.php?name=RANFOUNDRY')
+[2024-09-27T23:28:32.859+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:32.918+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:32.983+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RDFOOD', 'https://www.dse.com.bd/displayCompany.php?name=RDFOOD')
+[2024-09-27T23:28:33.003+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:33.058+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:33.084+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RECKITTBEN', 'https://www.dse.com.bd/displayCompany.php?name=RECKITTBEN')
+[2024-09-27T23:28:33.108+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:33.145+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:33.188+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('REGENTTEX', 'https://www.dse.com.bd/displayCompany.php?name=REGENTTEX')
+[2024-09-27T23:28:33.219+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:33.267+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:33.300+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RELIANCE1', 'https://www.dse.com.bd/displayCompany.php?name=RELIANCE1')
+[2024-09-27T23:28:33.307+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:33.386+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:33.413+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RELIANCINS', 'https://www.dse.com.bd/displayCompany.php?name=RELIANCINS')
+[2024-09-27T23:28:33.438+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:33.616+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:33.709+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RENATA', 'https://www.dse.com.bd/displayCompany.php?name=RENATA')
+[2024-09-27T23:28:33.775+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:33.893+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:33.938+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RENWICKJA', 'https://www.dse.com.bd/displayCompany.php?name=RENWICKJA')
+[2024-09-27T23:28:33.951+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:34.067+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:34.156+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('REPUBLIC', 'https://www.dse.com.bd/displayCompany.php?name=REPUBLIC')
+[2024-09-27T23:28:34.160+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:34.233+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:34.269+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RINGSHINE', 'https://www.dse.com.bd/displayCompany.php?name=RINGSHINE')
+[2024-09-27T23:28:34.286+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:34.333+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:34.359+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RNSPIN', 'https://www.dse.com.bd/displayCompany.php?name=RNSPIN')
+[2024-09-27T23:28:34.367+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:34.455+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:34.534+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ROBI', 'https://www.dse.com.bd/displayCompany.php?name=ROBI')
+[2024-09-27T23:28:34.546+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:34.606+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:34.666+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RSRMSTEEL', 'https://www.dse.com.bd/displayCompany.php?name=RSRMSTEEL')
+[2024-09-27T23:28:34.726+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:34.794+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:34.822+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RUNNERAUTO', 'https://www.dse.com.bd/displayCompany.php?name=RUNNERAUTO')
+[2024-09-27T23:28:34.843+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:34.896+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:34.907+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RUPALIBANK', 'https://www.dse.com.bd/displayCompany.php?name=RUPALIBANK')
+[2024-09-27T23:28:34.916+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:34.941+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:35.014+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RUPALIINS', 'https://www.dse.com.bd/displayCompany.php?name=RUPALIINS')
+[2024-09-27T23:28:35.020+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:35.087+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:35.137+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('RUPALILIFE', 'https://www.dse.com.bd/displayCompany.php?name=RUPALILIFE')
+[2024-09-27T23:28:35.156+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:35.205+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:35.238+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SAFKOSPINN', 'https://www.dse.com.bd/displayCompany.php?name=SAFKOSPINN')
+[2024-09-27T23:28:35.250+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:35.318+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:35.358+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SAIFPOWER', 'https://www.dse.com.bd/displayCompany.php?name=SAIFPOWER')
+[2024-09-27T23:28:35.405+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:35.483+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:35.533+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SAIHAMCOT', 'https://www.dse.com.bd/displayCompany.php?name=SAIHAMCOT')
+[2024-09-27T23:28:35.581+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:35.664+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:35.690+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SAIHAMTEX', 'https://www.dse.com.bd/displayCompany.php?name=SAIHAMTEX')
+[2024-09-27T23:28:35.708+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:35.768+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:35.809+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SALAMCRST', 'https://www.dse.com.bd/displayCompany.php?name=SALAMCRST')
+[2024-09-27T23:28:35.830+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:35.898+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:35.922+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SALVOCHEM', 'https://www.dse.com.bd/displayCompany.php?name=SALVOCHEM')
+[2024-09-27T23:28:35.932+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:36.000+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:36.044+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SAMATALETH', 'https://www.dse.com.bd/displayCompany.php?name=SAMATALETH')
+[2024-09-27T23:28:36.063+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:36.148+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:36.177+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SAMORITA', 'https://www.dse.com.bd/displayCompany.php?name=SAMORITA')
+[2024-09-27T23:28:36.224+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:36.328+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:36.367+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SANDHANINS', 'https://www.dse.com.bd/displayCompany.php?name=SANDHANINS')
+[2024-09-27T23:28:36.381+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:36.472+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:36.505+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SAPORTL', 'https://www.dse.com.bd/displayCompany.php?name=SAPORTL')
+[2024-09-27T23:28:36.521+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:36.550+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:36.633+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SAVAREFR', 'https://www.dse.com.bd/displayCompany.php?name=SAVAREFR')
+[2024-09-27T23:28:36.649+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:36.705+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:36.746+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SBACBANK', 'https://www.dse.com.bd/displayCompany.php?name=SBACBANK')
+[2024-09-27T23:28:36.761+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:36.811+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:36.862+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SEAPEARL', 'https://www.dse.com.bd/displayCompany.php?name=SEAPEARL')
+[2024-09-27T23:28:36.894+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:37.007+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:37.051+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SEMLFBSLGF', 'https://www.dse.com.bd/displayCompany.php?name=SEMLFBSLGF')
+[2024-09-27T23:28:37.061+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:37.123+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:37.153+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SEMLIBBLSF', 'https://www.dse.com.bd/displayCompany.php?name=SEMLIBBLSF')
+[2024-09-27T23:28:37.158+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:37.219+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:37.251+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SEMLLECMF', 'https://www.dse.com.bd/displayCompany.php?name=SEMLLECMF')
+[2024-09-27T23:28:37.274+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:37.320+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:37.364+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SHAHJABANK', 'https://www.dse.com.bd/displayCompany.php?name=SHAHJABANK')
+[2024-09-27T23:28:37.399+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:37.443+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:37.506+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SHASHADNIM', 'https://www.dse.com.bd/displayCompany.php?name=SHASHADNIM')
+[2024-09-27T23:28:37.522+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:37.582+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:37.645+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SHEPHERD', 'https://www.dse.com.bd/displayCompany.php?name=SHEPHERD')
+[2024-09-27T23:28:37.655+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:37.686+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:37.716+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SHURWID', 'https://www.dse.com.bd/displayCompany.php?name=SHURWID')
+[2024-09-27T23:28:37.719+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:37.753+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:37.829+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SHYAMPSUG', 'https://www.dse.com.bd/displayCompany.php?name=SHYAMPSUG')
+[2024-09-27T23:28:37.853+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:38.087+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:38.096+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SIBL', 'https://www.dse.com.bd/displayCompany.php?name=SIBL')
+[2024-09-27T23:28:38.107+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:38.276+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:38.313+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SICL', 'https://www.dse.com.bd/displayCompany.php?name=SICL')
+[2024-09-27T23:28:38.328+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:38.454+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:38.569+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SILCOPHL', 'https://www.dse.com.bd/displayCompany.php?name=SILCOPHL')
+[2024-09-27T23:28:38.589+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:38.717+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:38.774+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SILVAPHL', 'https://www.dse.com.bd/displayCompany.php?name=SILVAPHL')
+[2024-09-27T23:28:38.786+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:38.821+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:38.885+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SIMTEX', 'https://www.dse.com.bd/displayCompany.php?name=SIMTEX')
+[2024-09-27T23:28:38.920+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:39.005+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:39.081+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SINGERBD', 'https://www.dse.com.bd/displayCompany.php?name=SINGERBD')
+[2024-09-27T23:28:39.097+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:39.193+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:39.256+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SINOBANGLA', 'https://www.dse.com.bd/displayCompany.php?name=SINOBANGLA')
+[2024-09-27T23:28:39.283+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:39.350+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:39.398+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SIPLC', 'https://www.dse.com.bd/displayCompany.php?name=SIPLC')
+[2024-09-27T23:28:39.414+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:39.546+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:39.587+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SKTRIMS', 'https://www.dse.com.bd/displayCompany.php?name=SKTRIMS')
+[2024-09-27T23:28:39.607+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:39.686+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:39.718+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SONALIANSH', 'https://www.dse.com.bd/displayCompany.php?name=SONALIANSH')
+[2024-09-27T23:28:39.731+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:39.774+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:39.794+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SONALILIFE', 'https://www.dse.com.bd/displayCompany.php?name=SONALILIFE')
+[2024-09-27T23:28:39.811+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:39.928+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:39.970+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SONALIPAPR', 'https://www.dse.com.bd/displayCompany.php?name=SONALIPAPR')
+[2024-09-27T23:28:39.990+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:40.177+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:44.006+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SONARBAINS', 'https://www.dse.com.bd/displayCompany.php?name=SONARBAINS')
+[2024-09-27T23:28:44.032+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:49.997+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:50.118+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SONARGAON', 'https://www.dse.com.bd/displayCompany.php?name=SONARGAON')
+[2024-09-27T23:28:50.131+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:50.251+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:50.323+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SOUTHEASTB', 'https://www.dse.com.bd/displayCompany.php?name=SOUTHEASTB')
+[2024-09-27T23:28:50.371+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:50.567+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:50.620+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SPCERAMICS', 'https://www.dse.com.bd/displayCompany.php?name=SPCERAMICS')
+[2024-09-27T23:28:50.650+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:50.744+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:50.756+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SPCL', 'https://www.dse.com.bd/displayCompany.php?name=SPCL')
+[2024-09-27T23:28:50.760+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:50.830+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:50.859+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SQUARETEXT', 'https://www.dse.com.bd/displayCompany.php?name=SQUARETEXT')
+[2024-09-27T23:28:50.869+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:50.904+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:50.923+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SQURPHARMA', 'https://www.dse.com.bd/displayCompany.php?name=SQURPHARMA')
+[2024-09-27T23:28:50.927+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:50.960+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:50.975+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SSSTEEL', 'https://www.dse.com.bd/displayCompany.php?name=SSSTEEL')
+[2024-09-27T23:28:50.979+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:51.020+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:51.045+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('STANCERAM', 'https://www.dse.com.bd/displayCompany.php?name=STANCERAM')
+[2024-09-27T23:28:51.079+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:51.181+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:51.215+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('STANDARINS', 'https://www.dse.com.bd/displayCompany.php?name=STANDARINS')
+[2024-09-27T23:28:51.225+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:51.267+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:51.276+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('STANDBANKL', 'https://www.dse.com.bd/displayCompany.php?name=STANDBANKL')
+[2024-09-27T23:28:51.293+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:51.378+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:51.435+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('STYLECRAFT', 'https://www.dse.com.bd/displayCompany.php?name=STYLECRAFT')
+[2024-09-27T23:28:51.456+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:51.527+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:51.541+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SUMITPOWER', 'https://www.dse.com.bd/displayCompany.php?name=SUMITPOWER')
+[2024-09-27T23:28:51.553+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:51.599+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:51.649+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('SUNLIFEINS', 'https://www.dse.com.bd/displayCompany.php?name=SUNLIFEINS')
+[2024-09-27T23:28:51.665+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:51.694+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:51.705+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('TAKAFULINS', 'https://www.dse.com.bd/displayCompany.php?name=TAKAFULINS')
+[2024-09-27T23:28:51.711+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:51.763+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:51.812+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('TALLUSPIN', 'https://www.dse.com.bd/displayCompany.php?name=TALLUSPIN')
+[2024-09-27T23:28:51.870+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:51.948+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:51.994+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('TAMIJTEX', 'https://www.dse.com.bd/displayCompany.php?name=TAMIJTEX')
+[2024-09-27T23:28:51.999+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:52.028+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:52.067+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('TECHNODRUG', 'https://www.dse.com.bd/displayCompany.php?name=TECHNODRUG')
+[2024-09-27T23:28:52.081+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:52.122+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:52.152+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('TILIL', 'https://www.dse.com.bd/displayCompany.php?name=TILIL')
+[2024-09-27T23:28:52.174+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:52.225+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:52.250+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('TITASGAS', 'https://www.dse.com.bd/displayCompany.php?name=TITASGAS')
+[2024-09-27T23:28:52.271+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:52.304+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:52.362+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('TOSRIFA', 'https://www.dse.com.bd/displayCompany.php?name=TOSRIFA')
+[2024-09-27T23:28:52.381+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:52.463+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:52.500+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('TRUSTB1MF', 'https://www.dse.com.bd/displayCompany.php?name=TRUSTB1MF')
+[2024-09-27T23:28:52.522+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:52.601+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:52.619+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('TRUSTBANK', 'https://www.dse.com.bd/displayCompany.php?name=TRUSTBANK')
+[2024-09-27T23:28:52.627+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:52.717+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:52.754+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('TUNGHAI', 'https://www.dse.com.bd/displayCompany.php?name=TUNGHAI')
+[2024-09-27T23:28:52.782+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:52.869+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:52.882+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('UCB', 'https://www.dse.com.bd/displayCompany.php?name=UCB')
+[2024-09-27T23:28:52.897+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:52.951+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:52.999+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('UNILEVERCL', 'https://www.dse.com.bd/displayCompany.php?name=UNILEVERCL')
+[2024-09-27T23:28:53.019+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:53.122+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:53.154+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('UNIONBANK', 'https://www.dse.com.bd/displayCompany.php?name=UNIONBANK')
+[2024-09-27T23:28:53.165+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:53.208+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:53.238+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('UNIONCAP', 'https://www.dse.com.bd/displayCompany.php?name=UNIONCAP')
+[2024-09-27T23:28:53.245+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:53.283+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:53.303+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('UNIONINS', 'https://www.dse.com.bd/displayCompany.php?name=UNIONINS')
+[2024-09-27T23:28:53.309+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:53.377+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:53.433+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('UNIQUEHRL', 'https://www.dse.com.bd/displayCompany.php?name=UNIQUEHRL')
+[2024-09-27T23:28:53.447+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:53.536+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:53.577+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('UNITEDFIN', 'https://www.dse.com.bd/displayCompany.php?name=UNITEDFIN')
+[2024-09-27T23:28:53.584+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:53.688+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:53.733+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('UNITEDINS', 'https://www.dse.com.bd/displayCompany.php?name=UNITEDINS')
+[2024-09-27T23:28:53.790+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:53.847+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:53.874+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('UPGDCL', 'https://www.dse.com.bd/displayCompany.php?name=UPGDCL')
+[2024-09-27T23:28:53.898+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:54.037+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:54.099+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('USMANIAGL', 'https://www.dse.com.bd/displayCompany.php?name=USMANIAGL')
+[2024-09-27T23:28:54.117+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:54.227+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:54.263+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('UTTARABANK', 'https://www.dse.com.bd/displayCompany.php?name=UTTARABANK')
+[2024-09-27T23:28:54.266+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:54.363+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:54.412+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('UTTARAFIN', 'https://www.dse.com.bd/displayCompany.php?name=UTTARAFIN')
+[2024-09-27T23:28:54.420+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:54.469+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:54.546+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('VAMLBDMF1', 'https://www.dse.com.bd/displayCompany.php?name=VAMLBDMF1')
+[2024-09-27T23:28:54.561+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:54.715+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:54.800+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('VAMLRBBF', 'https://www.dse.com.bd/displayCompany.php?name=VAMLRBBF')
+[2024-09-27T23:28:54.846+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:55.081+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:55.320+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('VFSTDL', 'https://www.dse.com.bd/displayCompany.php?name=VFSTDL')
+[2024-09-27T23:28:55.349+0000] {job.py:229} INFO - Heartbeat recovered after 11.16 seconds
+[2024-09-27T23:28:55.401+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:55.519+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:55.587+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('WALTONHIL', 'https://www.dse.com.bd/displayCompany.php?name=WALTONHIL')
+[2024-09-27T23:28:55.631+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:55.868+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:55.992+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('WATACHEM', 'https://www.dse.com.bd/displayCompany.php?name=WATACHEM')
+[2024-09-27T23:28:56.012+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:56.100+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:56.135+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('WMSHIPYARD', 'https://www.dse.com.bd/displayCompany.php?name=WMSHIPYARD')
+[2024-09-27T23:28:56.146+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:56.213+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:56.252+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('YPL', 'https://www.dse.com.bd/displayCompany.php?name=YPL')
+[2024-09-27T23:28:56.286+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:56.373+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:56.395+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ZAHEENSPIN', 'https://www.dse.com.bd/displayCompany.php?name=ZAHEENSPIN')
+[2024-09-27T23:28:56.403+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:56.515+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:56.546+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ZAHINTEX', 'https://www.dse.com.bd/displayCompany.php?name=ZAHINTEX')
+[2024-09-27T23:28:56.553+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:56.640+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:28:56.699+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_list (company_trade_name, company_url) 
+        VALUES (%s, %s)
+        ON CONFLICT (company_trade_name) DO NOTHING;
+    , parameters: ('ZEALBANGLA', 'https://www.dse.com.bd/displayCompany.php?name=ZEALBANGLA')
+[2024-09-27T23:28:56.716+0000] {sql.py:518} INFO - Rows affected: 0
+[2024-09-27T23:28:56.719+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-27T23:28:56.789+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-27T23:28:56.821+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=scrape_and_save_share_prices_with_company_data, task_id=insert_company_data, run_id=scheduled__2024-06-05T00:00:00+00:00, execution_date=20240605T000000, start_date=20240927T232742, end_date=20240927T232856
+[2024-09-27T23:28:57.466+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-09-27T23:28:57.477+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-09-27T23:28:57.478+0000] {logging_mixin.py:190} INFO - Dag name:scrape_and_save_share_prices_with_company_data queued_at:2024-09-27 23:27:16.225822+00:00
+[2024-09-27T23:28:57.480+0000] {logging_mixin.py:190} INFO - Task hostname:7746de5121f6 operator:PythonOperator
+[2024-09-27T23:28:57.558+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-27T23:28:57.814+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-27T23:28:57.830+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

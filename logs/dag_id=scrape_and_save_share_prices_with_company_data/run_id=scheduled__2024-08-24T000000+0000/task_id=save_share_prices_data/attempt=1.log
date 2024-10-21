@@ -1,0 +1,569 @@
+[2024-09-27T23:46:36.905+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-27T23:46:37.046+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: scrape_and_save_share_prices_with_company_data.save_share_prices_data scheduled__2024-08-24T00:00:00+00:00 [queued]>
+[2024-09-27T23:46:37.109+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: scrape_and_save_share_prices_with_company_data.save_share_prices_data scheduled__2024-08-24T00:00:00+00:00 [queued]>
+[2024-09-27T23:46:37.111+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-09-27T23:46:37.521+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): save_share_prices_data> on 2024-08-24 00:00:00+00:00
+[2024-09-27T23:46:37.640+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6370) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-27T23:46:37.661+0000] {standard_task_runner.py:72} INFO - Started process 6414 to run task
+[2024-09-27T23:46:37.658+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'scrape_and_save_share_prices_with_company_data', 'save_share_prices_data', 'scheduled__2024-08-24T00:00:00+00:00', '--job-id', '3975', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmphp35kw5j']
+[2024-09-27T23:46:37.681+0000] {standard_task_runner.py:105} INFO - Job 3975: Subtask save_share_prices_data
+[2024-09-27T23:46:38.193+0000] {task_command.py:467} INFO - Running <TaskInstance: scrape_and_save_share_prices_with_company_data.save_share_prices_data scheduled__2024-08-24T00:00:00+00:00 [running]> on host 7746de5121f6
+[2024-09-27T23:46:38.915+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='scrape_and_save_share_prices_with_company_data' AIRFLOW_CTX_TASK_ID='save_share_prices_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-24T00:00:00+00:00'
+[2024-09-27T23:46:38.939+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-09-27T23:46:38.949+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-09-27T23:46:38.956+0000] {logging_mixin.py:190} INFO - Current task name:save_share_prices_data state:running start_date:2024-09-27 23:46:37.048889+00:00
+[2024-09-27T23:46:38.958+0000] {logging_mixin.py:190} INFO - Dag name:scrape_and_save_share_prices_with_company_data and current dag run status:running
+[2024-09-27T23:46:38.959+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-27T23:46:52.284+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:52.423+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('1', datetime.datetime(2024, 9, 27, 23, 46, 52, 193842), '3.4', '3.5', '3.4', '3.4', '3.4', '0', '71', '1.187', '348,619')
+[2024-09-27T23:46:52.433+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:52.489+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:52.542+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('2', datetime.datetime(2024, 9, 27, 23, 46, 52, 434813), '33', '34.7', '32.7', '33', '33.7', '-0.7', '227', '4.555', '137,870')
+[2024-09-27T23:46:52.545+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:52.669+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:52.704+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('3', datetime.datetime(2024, 9, 27, 23, 46, 52, 549268), '32', '32.5', '29', '32', '32', '0', '509', '9.749', '305,898')
+[2024-09-27T23:46:52.714+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:52.759+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:52.826+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('4', datetime.datetime(2024, 9, 27, 23, 46, 52, 715967), '20.1', '21.4', '19.7', '20.1', '20.4', '-0.3', '171', '1.134', '56,708')
+[2024-09-27T23:46:52.829+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:52.921+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:52.960+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('5', datetime.datetime(2024, 9, 27, 23, 46, 52, 852963), '3.7', '3.7', '3.5', '3.6', '3.6', '0.1', '57', '1.869', '524,999')
+[2024-09-27T23:46:52.962+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:53.009+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:53.043+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('6', datetime.datetime(2024, 9, 27, 23, 46, 52, 963450), '9.9', '10.1', '9.1', '9.9', '9.2', '0.7', '1,927', '77.017', '7,843,367')
+[2024-09-27T23:46:53.049+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:53.126+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:53.162+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('7', datetime.datetime(2024, 9, 27, 23, 46, 53, 54661), '17.8', '18.9', '16.5', '17.2', '18.3', '-0.5', '62', '0.977', '58,018')
+[2024-09-27T23:46:53.164+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:53.217+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:53.228+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('8', datetime.datetime(2024, 9, 27, 23, 46, 53, 165221), '145.8', '146.5', '144.2', '145.8', '145.6', '0.2', '169', '1.705', '11,696')
+[2024-09-27T23:46:53.230+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:53.293+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:53.326+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('9', datetime.datetime(2024, 9, 27, 23, 46, 53, 231705), '133', '135.2', '131.7', '131.9', '134.5', '-1.5', '236', '2.97', '22,350')
+[2024-09-27T23:46:53.329+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:53.410+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:53.442+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('10', datetime.datetime(2024, 9, 27, 23, 46, 53, 334989), '85.7', '87', '84.7', '85.7', '86.5', '-0.8', '1,109', '36.903', '431,425')
+[2024-09-27T23:46:53.463+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:53.538+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:53.574+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('11', datetime.datetime(2024, 9, 27, 23, 46, 53, 469337), '14', '14.7', '13.6', '14', '14.7', '-0.7', '511', '9.93', '710,863')
+[2024-09-27T23:46:53.577+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:53.625+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:53.668+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('12', datetime.datetime(2024, 9, 27, 23, 46, 53, 582004), '9.7', '10.7', '8.9', '9.5', '9.8', '-0.1', '141', '1.573', '166,515')
+[2024-09-27T23:46:53.677+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:53.710+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:53.750+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('13', datetime.datetime(2024, 9, 27, 23, 46, 53, 683966), '91.4', '92.1', '85.2', '91.4', '83.8', '7.6', '1,600', '53.622', '594,540')
+[2024-09-27T23:46:53.753+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:53.834+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:53.882+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('14', datetime.datetime(2024, 9, 27, 23, 46, 53, 754374), '19.9', '19.9', '19.9', '19.9', '22.1', '-2.2', '87', '1.156', '58,103')
+[2024-09-27T23:46:53.898+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:53.939+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:53.983+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('15', datetime.datetime(2024, 9, 27, 23, 46, 53, 912196), '9.6', '10.5', '9.4', '9.6', '10.2', '-0.6', '105', '0.657', '68,419')
+[2024-09-27T23:46:54.007+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:54.059+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:54.101+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('16', datetime.datetime(2024, 9, 27, 23, 46, 54, 14010), '29.9', '30.9', '29.7', '29.9', '31', '-1.1', '811', '15.361', '509,675')
+[2024-09-27T23:46:54.105+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:54.160+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:54.200+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('17', datetime.datetime(2024, 9, 27, 23, 46, 54, 112097), '33.5', '34.1', '33.3', '33.5', '33.4', '0.1', '835', '52.974', '1,578,007')
+[2024-09-27T23:46:54.202+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:54.249+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:54.292+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('18', datetime.datetime(2024, 9, 27, 23, 46, 54, 203720), '27.5', '30.1', '26.5', '27.3', '27.6', '-0.1', '71', '0.813', '29,262')
+[2024-09-27T23:46:54.294+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:54.369+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:54.391+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('19', datetime.datetime(2024, 9, 27, 23, 46, 54, 304623), '7.5', '7.8', '7.4', '7.5', '7.7', '-0.2', '36', '1.108', '147,625')
+[2024-09-27T23:46:54.394+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:54.474+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:54.502+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('20', datetime.datetime(2024, 9, 27, 23, 46, 54, 398319), '97.7', '104', '97', '97.7', '101.8', '-4.1', '931', '47.221', '471,722')
+[2024-09-27T23:46:54.504+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:54.565+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:54.598+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('21', datetime.datetime(2024, 9, 27, 23, 46, 54, 508982), '135.2', '145', '135', '135.2', '144.6', '-9.4', '357', '14.304', '102,773')
+[2024-09-27T23:46:54.608+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:54.668+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:54.718+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('22', datetime.datetime(2024, 9, 27, 23, 46, 54, 616340), '23.8', '24.3', '23.2', '23.5', '23.4', '0.4', '255', '4.492', '189,343')
+[2024-09-27T23:46:54.720+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:54.771+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:54.807+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('23', datetime.datetime(2024, 9, 27, 23, 46, 54, 721850), '7.8', '8.2', '7.5', '7.8', '8.3', '-0.5', '336', '3.836', '493,732')
+[2024-09-27T23:46:54.808+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:54.835+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:54.881+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('24', datetime.datetime(2024, 9, 27, 23, 46, 54, 809985), '12.5', '13', '12.2', '12.5', '13', '-0.5', '84', '1.024', '82,139')
+[2024-09-27T23:46:54.884+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:54.997+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:55.044+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('25', datetime.datetime(2024, 9, 27, 23, 46, 54, 890746), '24.7', '24.9', '22.5', '24.7', '22.7', '2', '234', '3.848', '161,503')
+[2024-09-27T23:46:55.059+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:55.107+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:55.132+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('26', datetime.datetime(2024, 9, 27, 23, 46, 55, 62857), '858.2', '865', '832', '856', '877.8', '-19.6', '223', '2.783', '3,295')
+[2024-09-27T23:46:55.138+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:55.184+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:55.213+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('27', datetime.datetime(2024, 9, 27, 23, 46, 55, 145941), '236', '237', '234', '235', '238.8', '-2.8', '17', '0.145', '618')
+[2024-09-27T23:46:55.215+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:55.265+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:55.349+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('28', datetime.datetime(2024, 9, 27, 23, 46, 55, 221210), '27', '27', '27', '27', '29.9', '-2.9', '59', '0.856', '31,720')
+[2024-09-27T23:46:55.421+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:55.473+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:55.561+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('29', datetime.datetime(2024, 9, 27, 23, 46, 55, 424435), '114.9', '117', '113.1', '114.9', '116', '-1.1', '390', '4.88', '42,490')
+[2024-09-27T23:46:55.580+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:55.700+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:55.800+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('30', datetime.datetime(2024, 9, 27, 23, 46, 55, 588462), '16.9', '16.9', '16.9', '16.9', '18.7', '-1.8', '78', '0.758', '44,873')
+[2024-09-27T23:46:55.806+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:55.896+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:56.003+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('31', datetime.datetime(2024, 9, 27, 23, 46, 55, 809467), '238.2', '240', '235', '238.2', '235.9', '2.3', '117', '1.306', '5,533')
+[2024-09-27T23:46:56.014+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:56.102+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:56.153+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('32', datetime.datetime(2024, 9, 27, 23, 46, 56, 23232), '234.1', '249.9', '229', '234.1', '236.2', '-2.1', '392', '5.458', '23,277')
+[2024-09-27T23:46:56.202+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:56.273+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:56.308+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('33', datetime.datetime(2024, 9, 27, 23, 46, 56, 219731), '114.7', '116', '112', '114.7', '115.2', '-0.5', '511', '6.768', '59,373')
+[2024-09-27T23:46:56.311+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:56.404+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:56.422+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('34', datetime.datetime(2024, 9, 27, 23, 46, 56, 319331), '86.6', '91.8', '86.2', '86.8', '87.6', '-1', '80', '0.563', '6,430')
+[2024-09-27T23:46:56.427+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:56.456+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:56.493+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('35', datetime.datetime(2024, 9, 27, 23, 46, 56, 433026), '4', '4.1', '3.8', '4', '4', '0', '94', '0.447', '112,508')
+[2024-09-27T23:46:56.501+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:56.563+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:56.594+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('36', datetime.datetime(2024, 9, 27, 23, 46, 56, 510192), '211', '214.9', '210', '211', '212.1', '-1.1', '157', '2.021', '9,544')
+[2024-09-27T23:46:56.598+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:56.645+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:56.686+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('37', datetime.datetime(2024, 9, 27, 23, 46, 56, 605037), '13.4', '14.6', '13.2', '13.4', '14.4', '-1', '64', '0.389', '28,674')
+[2024-09-27T23:46:56.695+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:56.835+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:56.882+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('38', datetime.datetime(2024, 9, 27, 23, 46, 56, 704148), '16.6', '17.1', '16.1', '16.4', '16.6', '0', '65', '0.546', '32,991')
+[2024-09-27T23:46:56.886+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:56.967+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:57.016+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('39', datetime.datetime(2024, 9, 27, 23, 46, 56, 889397), '28.5', '31.6', '28.1', '28.8', '30.1', '-1.6', '80', '0.695', '23,788')
+[2024-09-27T23:46:57.026+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:57.157+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:57.197+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('40', datetime.datetime(2024, 9, 27, 23, 46, 57, 41713), '36.3', '38.7', '35', '36.3', '37.6', '-1.3', '62', '1.314', '36,153')
+[2024-09-27T23:46:57.212+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:57.272+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:57.310+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('41', datetime.datetime(2024, 9, 27, 23, 46, 57, 214540), '34', '34.5', '32.5', '34', '34.1', '-0.1', '1,211', '23.826', '711,689')
+[2024-09-27T23:46:57.321+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:57.396+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:57.441+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('42', datetime.datetime(2024, 9, 27, 23, 46, 57, 322981), '6', '6.3', '5.9', '6', '6.3', '-0.3', '144', '1.911', '314,514')
+[2024-09-27T23:46:57.444+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:57.513+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:57.575+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('43', datetime.datetime(2024, 9, 27, 23, 46, 57, 450228), '59', '64', '58.4', '58.7', '64.8', '-5.8', '58', '0.534', '9,039')
+[2024-09-27T23:46:57.578+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:57.635+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:57.675+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('44', datetime.datetime(2024, 9, 27, 23, 46, 57, 590048), '64.8', '65.2', '61.6', '64.8', '65.2', '-0.4', '57', '0.38', '6,063')
+[2024-09-27T23:46:57.678+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:57.704+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:57.724+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('45', datetime.datetime(2024, 9, 27, 23, 46, 57, 685468), '113', '114.5', '111.1', '113', '113.3', '-0.3', '484', '7.835', '69,618')
+[2024-09-27T23:46:57.728+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:57.807+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:57.871+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('46', datetime.datetime(2024, 9, 27, 23, 46, 57, 752717), '19', '19.2', '18.6', '19', '18.9', '0.1', '43', '0.817', '42,876')
+[2024-09-27T23:46:57.874+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:57.918+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:57.961+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('47', datetime.datetime(2024, 9, 27, 23, 46, 57, 881875), '12.4', '12.6', '12.2', '12.4', '12.5', '-0.1', '146', '2.561', '206,902')
+[2024-09-27T23:46:57.968+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:58.045+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.074+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('48', datetime.datetime(2024, 9, 27, 23, 46, 57, 974647), '930', '930', '920', '928.4', '928.6', '1.4', '33', '0.158', '170')
+[2024-09-27T23:46:58.077+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:58.155+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.200+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('49', datetime.datetime(2024, 9, 27, 23, 46, 58, 80516), '397', '402', '395.4', '397', '400.7', '-3.7', '1,748', '50.056', '125,479')
+[2024-09-27T23:46:58.206+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:58.253+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.304+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('50', datetime.datetime(2024, 9, 27, 23, 46, 58, 212929), '9.2', '9.2', '9.2', '9.2', '10.2', '-1', '76', '2.703', '293,822')
+[2024-09-27T23:46:58.309+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:58.378+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.430+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('51', datetime.datetime(2024, 9, 27, 23, 46, 58, 314946), '10.8', '12.8', '10.7', '10.8', '11.8', '-1', '553', '9.235', '841,710')
+[2024-09-27T23:46:58.433+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:58.508+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.558+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('52', datetime.datetime(2024, 9, 27, 23, 46, 58, 435530), '21', '21.2', '19.9', '21', '21.4', '-0.4', '408', '6.22', '305,447')
+[2024-09-27T23:46:58.562+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:58.693+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.791+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('53', datetime.datetime(2024, 9, 27, 23, 46, 58, 591612), '102.5', '107', '100.2', '102.5', '103.3', '-0.8', '151', '1.344', '13,224')
+[2024-09-27T23:46:58.799+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:58.831+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.876+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('54', datetime.datetime(2024, 9, 27, 23, 46, 58, 802881), '23.9', '25.3', '23.4', '23.7', '24.9', '-1', '216', '2.206', '92,158')
+[2024-09-27T23:46:58.884+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:58.963+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:58.999+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('55', datetime.datetime(2024, 9, 27, 23, 46, 58, 891993), '16.7', '17.3', '15.3', '16.7', '16.9', '-0.2', '220', '2.824', '167,942')
+[2024-09-27T23:46:59.007+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:59.073+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:59.103+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('56', datetime.datetime(2024, 9, 27, 23, 46, 59, 10987), '122.7', '125.7', '122', '122.8', '123.9', '-1.2', '98', '1.312', '10,695')
+[2024-09-27T23:46:59.106+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:59.183+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:59.198+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('57', datetime.datetime(2024, 9, 27, 23, 46, 59, 116885), '0', '0', '0', '5.2', '5.2', '--', '0', '0', '0')
+[2024-09-27T23:46:59.202+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:59.260+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:59.276+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('58', datetime.datetime(2024, 9, 27, 23, 46, 59, 210436), '12', '12', '12', '12', '13.3', '-1.3', '146', '1.98', '164,980')
+[2024-09-27T23:46:59.278+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:59.388+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:59.431+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('59', datetime.datetime(2024, 9, 27, 23, 46, 59, 285794), '17.8', '18.9', '17.1', '17.6', '18.9', '-1.1', '207', '1.207', '68,511')
+[2024-09-27T23:46:59.435+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:59.549+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:46:59.648+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('60', datetime.datetime(2024, 9, 27, 23, 46, 59, 439107), '13.2', '13.3', '12', '12.3', '13.3', '-0.1', '69', '0.96', '78,049')
+[2024-09-27T23:46:59.654+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:46:59.806+0000] {base.py:84} INFO - Retrieving connection 'dse_connection'
+[2024-09-27T23:47:00.135+0000] {sql.py:509} INFO - Running statement: 
+        INSERT INTO company_share_prices (
+            company_id, date, latest_trading_price, high_price, low_price, closing_price, ycp, change, trade, value, volume
+        ) VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    , parameters: ('61', datetime.datetime(2024, 9, 27, 23, 46, 59, 655928), '80.6', '80.6', '80.6', '80.6', '89.5', '-8.9', '82', '6.939', '86,096')
+[2024-09-27T23:47:00.170+0000] {logging_mixin.py:190} INFO - Error inserting share prices data: not all arguments converted during string formatting
+[2024-09-27T23:47:10.805+0000] {local_task_job_runner.py:266} INFO - Task exited with return code -9For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed
+[2024-09-27T23:47:11.331+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
